@@ -178,9 +178,9 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
-  maxSpeed: 0.75
+  profitablity: "\uAE30\uB85D\uC6A9"
+  circleNum: '   10'
+  maxSpeed: 0.85
 --- !u!114 &30288015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,9 +410,9 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
-  maxSpeed: 0.75
+  profitablity: X5.0
+  circleNum: '     7'
+  maxSpeed: '  0.8'
 --- !u!114 &491665415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,8 +562,8 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
+  profitablity: X3.0
+  circleNum: '     6'
   maxSpeed: 0.75
 --- !u!114 &539990489
 MonoBehaviour:
@@ -810,7 +810,7 @@ MonoBehaviour:
   textObjectMaxspeed: {fileID: 1063680195}
   profitablity: X1.0
   circleNum: '     3'
-  maxSpeed: 0.75
+  maxSpeed: '  0.5'
 --- !u!1 &855139719
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,8 +947,8 @@ MonoBehaviour:
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
   profitablity: X2.0
-  circleNum: '     4'
-  maxSpeed: '  0.9'
+  circleNum: '     5'
+  maxSpeed: '  0.7'
 --- !u!114 &914311811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,9 +1364,9 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
-  maxSpeed: 0.75
+  profitablity: X 20
+  circleNum: '   10'
+  maxSpeed: '  0.9'
 --- !u!114 &1600935432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1739,9 +1739,9 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
-  maxSpeed: 0.75
+  profitablity: X8.0
+  circleNum: '     8'
+  maxSpeed: '  0.9'
 --- !u!114 &1832183657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,9 +1891,9 @@ MonoBehaviour:
   textObjectProfitablity: {fileID: 1984555895}
   textObjectCircleNum: {fileID: 855139721}
   textObjectMaxspeed: {fileID: 1063680195}
-  profitablity: X1.0
-  circleNum: '     3'
-  maxSpeed: 0.75
+  profitablity: X 10
+  circleNum: '     9'
+  maxSpeed: '     1'
 --- !u!114 &1917620565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   textObjectMaxspeed: {fileID: 1063680195}
   profitablity: X1.5
   circleNum: '     4'
-  maxSpeed: '  0.8'
+  maxSpeed: '  0.6'
 --- !u!114 &2084214017
 MonoBehaviour:
   m_ObjectHideFlags: 0
