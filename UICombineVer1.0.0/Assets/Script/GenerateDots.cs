@@ -1,93 +1,119 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class GenerateDots : MonoBehaviour
 {
-    public GameObject dotInGame;
-    public GameObject TouchDetectorInGame;
-    public GameObject panelInGame;
-    GameObject dot1InGame;
-    GameObject dot2InGame;
-    GameObject dot3InGame;
-    public float timerInGame = 0;
-    float max_xInGame;
-    float max_yInGame;
-    float min_xInGame;
-    float min_yInGame;
-    float random_xInGame;
-    float random_yInGame;
-    public bool waveInGame = false;
-    public int aInGame = 0;
+    public GameObject dot;
+    public GameObject panel;
+    GameObject dot1;
+    GameObject dot2;
+    GameObject dot3;
+    bool dot1_touched;
+    bool dot2_touched;
+    bool dot3_touched;
+    public float timer = 0;
+    float max_x;
+    float max_y;
+    float min_x;
+    float min_y;
+    float random_x;
+    float random_y;
+    public bool wave = false;
+    public bool GameOver = false;
+    public int a = 0;
+    //int score = GetComponent<Score>().score;
     void Start()
     {
-        max_xInGame = panelInGame.GetComponent<SpriteRenderer>().bounds.max.x - 0.3f;
-        max_yInGame = panelInGame.GetComponent<SpriteRenderer>().bounds.max.y - 0.3f;
-        min_xInGame = panelInGame.GetComponent<SpriteRenderer>().bounds.min.x + 0.3f;
-        min_yInGame = panelInGame.GetComponent<SpriteRenderer>().bounds.min.y + 0.3f;
+    max_x = panel.GetComponent<SpriteRenderer>().bounds.max.x - 0.3f;
+    max_y = panel.GetComponent<SpriteRenderer>().bounds.max.y - 0.3f;
+    min_x = panel.GetComponent<SpriteRenderer>().bounds.min.x + 0.3f;
+    min_y = panel.GetComponent<SpriteRenderer>().bounds.min.y + 0.3f;
     }
     void Update()
     {
-        timerInGame += Time.deltaTime;
-        if (timerInGame > 0.125 && aInGame == 0)
+        if (GameOver == false)
         {
-            waveInGame = true;
-            aInGame++;
+            timer += Time.deltaTime;
+            if (timer > 0.25 && a == 0)
+            {
+                wave = true;
+                a++;
+            }
+            if (wave)
+            {
+                random_x = Random.Range(min_x, max_x );
+                random_y = Random.Range(min_y, max_y);
+                dot1 = Instantiate(dot);
+                dot1.transform.position = new Vector2(random_x, random_y);
+                wave = false;
+            }    
+            if (timer > 0.5 && a == 1)
+            {
+                wave = true;
+                a++;
+            }
+            if (wave)
+            {
+                do
+                {
+                    random_x = Random.Range(min_x, max_x );
+                    random_y = Random.Range(min_y, max_y);
+                } while(random_x == dot1.transform.position.x || random_y == dot1.transform.position.y);
+                dot2 = Instantiate(dot);
+                dot2.transform.position = new Vector2(random_x, random_y);
+                wave = false;
+            }     
+            if (timer > 0.75 && a == 2)
+            {
+                wave = true;
+                a++;
+            }
+            if (wave)
+            {
+                do
+                {
+                    random_x = Random.Range(min_x, max_x );
+                    random_y = Random.Range(min_y, max_y);
+                } while(random_x == dot1.transform.position.x || random_y == dot1.transform.position.y || random_x == dot2.transform.position.x || random_y == dot1.transform.position.y);
+                dot3 = Instantiate(dot);
+                dot3.transform.position = new Vector2(random_x, random_y);
+                timer = 0;
+                wave = false;
+            }            
+            if (timer > 0.75 && a == 3)
+            {
+                dot1.GetComponent<SpriteRenderer>().enabled = false;
+                dot2.GetComponent<SpriteRenderer>().enabled = false;
+                dot3.GetComponent<SpriteRenderer>().enabled = false;
+                a++; 
+            }           
+            if(dot1 != null && dot2 != null && dot3 != null)
+            {
+                if (dot1.GetComponent<Dot>().TouchDetector)
+                {
+                    Debug.Log("Dot1 Touched");
+                    if (dot2.GetComponent<Dot>().TouchDetector)
+                    {
+                        Debug.Log("Dot2 Touched");
+                        if (dot3.GetComponent<Dot>().TouchDetector)
+                        {
+                            Debug.Log("Dot3 Touched");
+                            timer = 0;
+                            a = 0;
+                            Destroy(dot1);
+                            Destroy(dot2);
+                            Destroy(dot3);
+                            Score.score ++;
+                        }
+                    }
+                }
+                if (timer > 1.5)
+                {
+                    Debug.Log("Game Over!");
+                    GameOver = true;
+                }   
+            }
         }
-        if (waveInGame)
-        {
-            random_xInGame = Random.Range(min_xInGame, max_xInGame );
-            random_yInGame = Random.Range(min_yInGame, max_yInGame);
-            dot1InGame = Instantiate(dotInGame);
-            dot1InGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            Instantiate(TouchDetectorInGame);
-            TouchDetectorInGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            waveInGame = false;
-        }    
-        if (timerInGame > 0.25 && aInGame == 1)
-        {
-            waveInGame = true;
-            aInGame++;
-        }
-        if (waveInGame)
-        {
-            random_xInGame = Random.Range(min_xInGame, max_xInGame);
-            random_yInGame = Random.Range(min_yInGame, max_yInGame);
-            dot2InGame = Instantiate(dotInGame);
-            dot2InGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            Instantiate(TouchDetectorInGame);
-            TouchDetectorInGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            waveInGame = false;
-        }     
-        if (timerInGame > 0.375 && aInGame == 2)
-        {
-            waveInGame = true;
-            aInGame++;
-        }
-        if (waveInGame)
-        {
-            random_xInGame = Random.Range(min_xInGame, max_xInGame);
-            random_yInGame = Random.Range(min_yInGame, max_yInGame);
-            dot3InGame = Instantiate(dotInGame);
-            dot3InGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            Instantiate(TouchDetectorInGame);
-            TouchDetectorInGame.transform.position = new Vector2(random_xInGame, random_yInGame);
-            timerInGame = 0;
-            waveInGame = false;
-        }            
-        if (timerInGame > 0.5 && aInGame == 3)
-        {
-            Destroy(dot1InGame);
-            aInGame++;
-        }    
-        if (timerInGame > 0.625 && aInGame == 4)
-        {
-            Destroy(dot2InGame);
-            aInGame++;
-        }    
-        if (timerInGame > 0.75 && aInGame == 5)
-        {
-            Destroy(dot3InGame);
-            aInGame++;
-        }                  
     }
 }

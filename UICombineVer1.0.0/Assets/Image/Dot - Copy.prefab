@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7499273226505656895}
   - component: {fileID: 7499273226505657024}
   - component: {fileID: 7499273226505656894}
-  - component: {fileID: 7499273226505656893}
+  - component: {fileID: 3229277421100867304}
   m_Layer: 0
   m_Name: Dot - Copy
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &7499273226505656893
+--- !u!114 &3229277421100867304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7499273226505657025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bcdfde6498b1a248a6af9a413761e3c, type: 3}
+  m_Script: {fileID: 11500000, guid: c0631d1f214d1d04a9bc850f9af5039b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TouchDetector: 0
