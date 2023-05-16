@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class ani_con : MonoBehaviour
 {
-
+    int num = 0;
     public GameObject belt;
     public GameObject doll;
 
@@ -46,12 +46,31 @@ public class ani_con : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(num == 0)
+        {
+            belt_in();
+        }
+        if(Score.previousScore<Score.score)
+        {
+            if(Score.score%3 == 1)
+            {
+                doll_1();
+            }
+            else if(Score.score%3 == 2)
+            {
+                doll_2();
+            }
+            else if(Score.score%3 == 0)
+            {
+                out_and_in();
+            }
+        }
+        Score.previousScore = Score.score;
+        num = 1;
     }
 }
