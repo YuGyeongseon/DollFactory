@@ -13,7 +13,7 @@ public class shopDoll : MonoBehaviour
 
     public GameObject pop_up;
 
-    public Text title;
+    public GameObject title;
 
     public Text textObjectProfitablity;
     public Text textObjectCircleNum;
@@ -40,10 +40,10 @@ public class shopDoll : MonoBehaviour
 
             }
 
-            title.color = Color.black;
-            title.text = "구입하시겠습니까?\n가격: " + Settings.price[doll_img_cont.doll_no].ToString();
+           
             pop_up.SetActive(true);
-    
+            title.SendMessage("String", 1);
+
 
         }
         else

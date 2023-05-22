@@ -9,7 +9,7 @@ public class pop_up_buy : MonoBehaviour
 
     public GameObject pop_up;
 
-    public Text title;
+    public GameObject title;
     public Text coin;
 
     
@@ -35,8 +35,7 @@ public class pop_up_buy : MonoBehaviour
         else
         {
 
-            title.color = Color.red;
-            title.text = "코인이 부족합니다.";
+            title.SendMessage("String", 2);
 
             if (Settings.is_Sound)
             {
