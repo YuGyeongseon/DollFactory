@@ -7,13 +7,13 @@ public class Score : MonoBehaviour
 {
     public static int score = 0;
     public static int previousScore = 0;
-    GameObject DotGenerator = GameObject.Find("DotGenerator");
+    //GameObject DotGenerator = GameObject.Find("DotGenerator");
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         previousScore= 0;
-        DotGenerator = GameObject.Find("DotGenerator");
+        GameObject DotGenerator = GameObject.Find("DotGenerator");
 
     }
 

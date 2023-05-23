@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class shopDoll : MonoBehaviour
 {
-    Image img;
+    public Image img;
     public int doll_num;
-
-
+    public static bool isBuy;
+    public static int selectDollNum;
     public GameObject pop_up;
 
     public GameObject title;
@@ -22,12 +22,17 @@ public class shopDoll : MonoBehaviour
     public string circleNum;
     public string maxSpeed;
 
+    public static void Buy()
+    {
+        isBuy= true;
+    }
+    
     public void OnClick()
     {
         textObjectProfitablity.text = profitablity;
         textObjectCircleNum.text = circleNum;
         textObjectMaxspeed.text = maxSpeed;
-
+        selectDollNum = doll_num;
 
         
         

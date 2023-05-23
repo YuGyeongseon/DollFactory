@@ -20,7 +20,6 @@ public class doll_img_cont : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Settings.coin = 100; // 돈 설정 (저장 x)
 
         if (Settings.is_Sound)
         {
@@ -29,6 +28,7 @@ public class doll_img_cont : MonoBehaviour
         }
 
         img = GetComponent<Image>();
+        
 
         is_doll[1] = true;              //인형 소지 여부 초기화(임시)
         for (int i = 2; i <= 9; i++)

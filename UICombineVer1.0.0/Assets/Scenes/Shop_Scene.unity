@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 9
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -521,6 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 5
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -773,6 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 4
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -1323,6 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 1
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -1561,6 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 3
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -2573,6 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 8
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -2837,7 +2843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1053321823, guid: 77954ebfcaff6634fad44711901b4df2, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2868,7 +2874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 1575605485, guid: 979b0221e130bde4b87062e3c5e4af6d, type: 3}
+  - {fileID: 0}
   - {fileID: 1575605485, guid: 979b0221e130bde4b87062e3c5e4af6d, type: 3}
   - {fileID: 1626684722, guid: 979b0221e130bde4b87062e3c5e4af6d, type: 3}
   - {fileID: 1566165125, guid: 979b0221e130bde4b87062e3c5e4af6d, type: 3}
@@ -3027,6 +3033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 6
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -3358,6 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 7
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}
@@ -3971,6 +3979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a80f2a29eb1644820dc3f5de25aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 0}
   doll_num: 2
   pop_up: {fileID: 1865740812}
   title: {fileID: 2130688352}

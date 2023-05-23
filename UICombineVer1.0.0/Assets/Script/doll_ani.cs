@@ -7,13 +7,14 @@ public class doll_ani : MonoBehaviour
 {
     public ParticleSystem parti;
     public Sprite[] sprites = new Sprite[3];
-
     SpriteRenderer spr;
+    
 
 
 
     private void doll_enter()
     {
+
         spr.sprite = sprites[0];
     }
 
@@ -31,7 +32,7 @@ public class doll_ani : MonoBehaviour
     {
        spr = GetComponent<SpriteRenderer>();
 
-        spr.sprite = sprites[0];
+       spr.sprite = sprites[0];
     }
 
     // Update is called once per frame
