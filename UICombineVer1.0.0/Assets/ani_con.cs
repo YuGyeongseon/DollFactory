@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 
@@ -17,8 +18,8 @@ public class ani_con : MonoBehaviour
 
     public void belt_in()   //벨트등장
     {
-        doll.SendMessage("doll_enter");
-        belt.SendMessage("belt_in");
+             doll.SendMessage("doll_enter");
+                belt.SendMessage("belt_in");
     }
 
     public void belt_out()  //벨트 퇴장
@@ -54,10 +55,10 @@ public class ani_con : MonoBehaviour
                 doll.SendMessage("upgrade", 19);
                 break;
             case 8:
-                doll.SendMessage("upgrade", 21);
+                doll.SendMessage("upgrade", 22);
                 break;
             case 9:
-                doll.SendMessage("upgrade", 24);
+                doll.SendMessage("upgrade", 25);
                 break;
         }
     }
@@ -85,13 +86,13 @@ public class ani_con : MonoBehaviour
                 doll.SendMessage("upgrade", 17);
                 break;
             case 7:
-                doll.SendMessage("upgrade", 19);
+                doll.SendMessage("upgrade", 20);
                 break;
             case 8:
-                doll.SendMessage("upgrade", 22);
+                doll.SendMessage("upgrade", 23);
                 break;
             case 9:
-                doll.SendMessage("upgrade", 25);
+                doll.SendMessage("upgrade", 26);
                 break;
         }
     }

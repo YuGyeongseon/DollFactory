@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class shopDoll : MonoBehaviour
 {
     public Image img;
-    public int doll_num;
+    public int doll_num = 1;
     public static bool isBuy;
     public static int selectDollNum;
     public GameObject pop_up;
