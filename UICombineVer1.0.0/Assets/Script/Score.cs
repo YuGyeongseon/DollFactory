@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public static int score = 0;
+    public static float score = 0;
     public static int previousScore = 0;
     //GameObject DotGenerator = GameObject.Find("DotGenerator");
     // Start is called before the first frame update

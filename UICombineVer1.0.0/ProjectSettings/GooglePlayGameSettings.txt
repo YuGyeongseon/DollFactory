@@ -1,0 +1,9 @@
+lastUpgrade=01101
+proj.pluginVersion=0.11.01
+proj.AppId=512859133963
+and.BundleId=com.defaultcompany.uicombinever
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e512859133963%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.defaultcompany.uicombinever%3c%2fstring%3e%0d%0a++%3c%21--achievement+made+boll--%3e%0d%0a++%3cstring+name%3d%22achievement_made_boll%22+translatable%3d%22false%22%3eCgkIi7ClxvYOEAIQAw%3c%2fstring%3e%0d%0a++%3c%21--achievement+doll+maker2--%3e%0d%0a++%3cstring+name%3d%22achievement_doll_maker2%22+translatable%3d%22false%22%3eCgkIi7ClxvYOEAIQBA%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+score--%3e%0d%0a++%3cstring+name%3d%22leaderboard_score%22+translatable%3d%22false%22%3eCgkIi7ClxvYOEAIQBQ%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=512859133963-u6avb3s0glonb585sdmrrmqj08uhqe1b.apps.googleusercontent.com
+android.SetupDone=true

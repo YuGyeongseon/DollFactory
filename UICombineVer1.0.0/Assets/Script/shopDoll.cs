@@ -47,7 +47,7 @@ public class shopDoll : MonoBehaviour
 
            
             pop_up.SetActive(true);
-            title.SendMessage("String", 1);
+            title.SendMessage("UpdateTitle", 1);
 
 
         }

@@ -8,18 +8,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game_Scene.unity
-    guid: bcf3a43afa2a14c46a10c5f5181a8951
+    path: Assets/Scenes/doll_Sell.unity
+    guid: 24d7c371e6904f54faa189e6f36da50d
+  - enabled: 1
+    path: Assets/Scenes/factory.unity
+    guid: 3fbdcc25132f7384eb42047be035621b
+  - enabled: 1
+    path: Assets/Scenes/Shop_Scene.unity
+    guid: 8400242ffc044b4489e5ff2c4434eca8
+  - enabled: 1
+    path: Assets/Scenes/effect_scene.unity
+    guid: 2710ec50c7e84eb4fb9723b4a2c83a40
+  - enabled: 1
+    path: Assets/Scenes/shop__.unity
+    guid: 9acd47df3de17ae41bab4484f1f5b1ed
   - enabled: 1
     path: Assets/Scenes/Setting_Scene.unity
     guid: aac5ccbeb20d1b14799a736525010fdf
   - enabled: 1
-    path: Assets/Scenes/Shop_Scene.unity
-    guid: 8400242ffc044b4489e5ff2c4434eca8
+    path: Assets/Scenes/Game_Scene.unity
+    guid: bcf3a43afa2a14c46a10c5f5181a8951
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6a27208422cc78f42b3033677c98fee3, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: fe09db13cd2c0544e80c245424e7d0bd, type: 2}

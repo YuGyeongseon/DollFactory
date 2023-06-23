@@ -35,7 +35,7 @@ public class pop_up_buy : MonoBehaviour
         else
         {
 
-            title.SendMessage("String", 2);
+            title.SendMessage("UpdateTitle", 2);
 
             if (Settings.is_Sound)
             {
