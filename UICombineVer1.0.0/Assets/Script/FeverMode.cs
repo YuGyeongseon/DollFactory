@@ -39,8 +39,8 @@ public class FeverMode : MonoBehaviour
             Background.SetActive(false);
             FeverBackground.SetActive(true); // 피버모드 배경화면 전환
             GetComponent<AudioSource>().Play(); // 브금 재생
-            GetComponent<GenerateDots>().size = 3; // 점 개수 3개 
-            GenerateDots.order = new GameObject[GetComponent<GenerateDots>().size];
+            GenerateDots.size = 3; // 점 개수 3개 
+            GenerateDots.order = new GameObject[GenerateDots.size];
             if (GetComponent<GenerateDots>().f)
             {
                 three_waves++;
@@ -56,7 +56,7 @@ public class FeverMode : MonoBehaviour
             Background.SetActive(true);
             FeverBackground.SetActive(false);
             GetComponent<GenerateDots>().feverTimer = 0;
-            GenerateDots.order = new GameObject[GetComponent<GenerateDots>().size];
+            GenerateDots.order = new GameObject[GenerateDots.size];
             three_waves = 0;
             dif_switch = true;
             fever_on = false;

@@ -13,6 +13,9 @@ public class ani_con : MonoBehaviour
     int num = 0;
     public GameObject belt;
     public GameObject doll;
+    int dot1 = 1;
+    int dot2 = 2;
+    int dot3 = 3;
     //int[] order;
 
 
@@ -108,33 +111,70 @@ public class ani_con : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        int dotNum = GenerateDots.size;
+        if (dotNum == 3)
+        {
+            dot1 = 1;
+            dot2 = 2;
+            dot3 = 3;
+        }
+        else if (dotNum == 4)
+        {
+            dot1 = 1;
+            dot2 = 3;
+            dot3 = 4;
+        }
+        else if (dotNum == 5)
+        {
+            dot1 = 2;
+            dot2 = 4;
+            dot3 = 5;
+        }
+        else if(dotNum == 6)
+        {
+            dot1 = 2;
+            dot2 = 4;
+            dot3 = 6;
+        }
+        else if (dotNum == 7)
+        {
+            dot1 = 3;
+            dot2 = 5;
+            dot3 = 7;
+        }
+        else if (dotNum == 8)
+        {
+            dot1 = 3;
+            dot2 = 6;
+            dot3 = 8;
+        }
         if (num == 0)
         {
             belt_in();
         }
         num++;
         Debug.Log(num);
-        //if (GenerateDots.order[0] == 1)
-        //{
-        //    doll_1();
-        //}
-        //if (GenerateDots.order[1] == 2&& GenerateDots.order[0] == 1)
-        //{
-        //    doll_2();
+        if (Dot.touch_count == dot1)
+        {
+            doll_1();
+        }
+        if (Dot.touch_count ==  dot2)
+        {
+            doll_2();
 
-        //    num++;
-        //}
-        //if (GenerateDots.order[2] == 3&& GenerateDots.order[1] == 2 && GenerateDots.order[0] == 1)
-        //{
-        //    out_and_in();
+            num++;
+        }
+        if (Dot.touch_count == dot3)
+        {
+            out_and_in();
 
-        //}
+        }
     }
 }
 
