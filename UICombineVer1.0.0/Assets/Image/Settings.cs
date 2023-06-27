@@ -23,6 +23,8 @@ public class Settings : MonoBehaviour
     public static bool is_BGM;
 
     public static int[] price = new int[10];
+    internal static int complete_doll;
+    internal static int incomplete_doll;
 
     public void sound_button()
     {

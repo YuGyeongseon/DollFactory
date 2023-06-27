@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class coin : MonoBehaviour
+public class incom_doll : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = Settings.coin.ToString();
-        
+        GetComponent<Text>().text = Settings.incomplete_doll.ToString();
     }
 }

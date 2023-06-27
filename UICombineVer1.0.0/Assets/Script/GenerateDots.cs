@@ -128,10 +128,11 @@ public class GenerateDots : MonoBehaviour
             if (isScore <= 40)
             {
                 notScore.notscore++;
+                Settings.incomplete_doll++;
             }
             else
             {
-
+                Settings.complete_doll++;
                 Score.score+= spw;
             }
             timer = 0;
