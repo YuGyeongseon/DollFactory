@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
 public class GenerateDots : MonoBehaviour
 {
+    public GameObject pop_up;
+    public Text comdoll;
+    public Text incomdoll;
+    public Text score_indicator;
+    private int doll;
+    private int indoll;
+
+
     public GameObject dot;
     public GameObject panel;
     GameObject dot1;
@@ -34,6 +43,8 @@ public class GenerateDots : MonoBehaviour
 
     void Start()
     {
+        pop_up.SetActive(false);
+
         timer = 0;
         dot_count = 0;
         size = 3;
@@ -45,10 +56,13 @@ public class GenerateDots : MonoBehaviour
         min_x = panel.GetComponent<SpriteRenderer>().bounds.min.x + 0.3f;
         min_y = panel.GetComponent<SpriteRenderer>().bounds.min.y + 0.3f;
 
+        doll = 0;
+        indoll = 0;
+
     }
     void Update()
     {
-       
+
         if (GameOver == false)
         {
             if (GetComponent<FeverMode>().dif_switch)
@@ -74,7 +88,7 @@ public class GenerateDots : MonoBehaviour
 
     void dotGen()
     {
-       
+
 
         for (int i = 0; i < order.Length; i++)
         {
@@ -112,7 +126,7 @@ public class GenerateDots : MonoBehaviour
 
     void touchDot()
     {
-        
+
         int count = 0;
         foreach (GameObject i in order)
         {
@@ -129,11 +143,13 @@ public class GenerateDots : MonoBehaviour
             {
                 notScore.notscore++;
                 Settings.incomplete_doll++;
+                indoll++;
             }
             else
             {
                 Settings.complete_doll++;
-                Score.score+= spw;
+                Score.score += spw;
+                doll++;
             }
             timer = 0;
             dot_count = 0;
@@ -159,7 +175,9 @@ public class GenerateDots : MonoBehaviour
         GameOver = true;
         Debug.Log("Game Over!");
         tpd = 2f;
-        SceneManager.LoadScene(0);
+
+
+        //SceneManager.LoadScene(7);
         size = 3;
         Score.score = 0;
         spw = 1;
@@ -168,6 +186,12 @@ public class GenerateDots : MonoBehaviour
         Dot.touch_order = 0;
         Dot.touch_count = 0;
         FeverMode.i = 0;
+
+
+        comdoll.text = doll.ToString();
+        incomdoll.text = indoll.ToString();
+        score_indicator.text = Score.score.ToString();
+        pop_up.SetActive(true);
     }
     void difficulty() // 점 개수 추가 
     {

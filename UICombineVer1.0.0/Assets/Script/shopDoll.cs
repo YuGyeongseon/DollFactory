@@ -7,36 +7,40 @@ using UnityEngine.UI;
 
 public class shopDoll : MonoBehaviour
 {
+
+
+    public string Name;
+
     public Image img;
     public int doll_num = 1;
     public static bool isBuy;
     public static int selectDollNum;
     public GameObject pop_up;
-
     public GameObject title;
 
     public Text textObjectProfitablity;
     public Text textObjectCircleNum;
     public Text textObjectMaxspeed;
-    public string profitablity;
-    public string circleNum;
-    public string maxSpeed;
+
+
+    public string defect_rate;
 
     public static void Buy()
     {
-        isBuy= true;
+        isBuy = true;
     }
-    
+
     public void OnClick()
     {
-        textObjectProfitablity.text = profitablity;
-        textObjectCircleNum.text = circleNum;
-        textObjectMaxspeed.text = maxSpeed;
+        textObjectProfitablity.text = Name;
+        textObjectCircleNum.text = Settings.price[doll_num].ToString() + " Coin";
+        textObjectMaxspeed.text = defect_rate;
         selectDollNum = doll_num;
 
-        
-        
-        if (doll_num == doll_img_cont.doll_no && doll_img_cont.is_doll[doll_num] == false) {
+
+
+        if (doll_num == doll_img_cont.doll_no && doll_img_cont.is_doll[doll_num] == false)
+        {
 
 
             if (Settings.is_Sound)
@@ -45,7 +49,7 @@ public class shopDoll : MonoBehaviour
 
             }
 
-           
+
             pop_up.SetActive(true);
             title.SendMessage("UpdateTitle", 1);
 
@@ -60,7 +64,7 @@ public class shopDoll : MonoBehaviour
             }
             doll_img_cont.doll_no = doll_num; //인형 번호
         }
-        
+
     }
 
     // Start is called before the first frame update
@@ -69,9 +73,8 @@ public class shopDoll : MonoBehaviour
 
         img = GetComponent<Image>();
 
-        
 
-        
+
     }
 
     // Update is called once per frame

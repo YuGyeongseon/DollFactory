@@ -108,16 +108,16 @@ public class Settings : MonoBehaviour
     void Start()
     {
 
-        
 
-        price[2] = 11;
-        price[3] = 12;
-        price[4] = 13;
-        price[5] = 14;
-        price[6] = 15;
-        price[7] = 16;
-        price[8] = 17;
-        price[9] = 18;
+        price[1] = 1;
+        price[2] = 2;
+        price[3] = 3;
+        price[4] = 4;
+        price[5] = 5;
+        price[6] = 6;
+        price[7] = 7;
+        price[8] = 8;
+        price[9] = 9;
 
         
 
