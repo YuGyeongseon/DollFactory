@@ -159,7 +159,6 @@ public class ani_con : MonoBehaviour
             belt_in();
         }
         num++;
-        Debug.Log(num);
         if (Dot.touch_count == dot1)
         {
             doll_1();

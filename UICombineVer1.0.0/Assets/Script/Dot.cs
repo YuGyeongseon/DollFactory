@@ -20,6 +20,7 @@ public class Dot : MonoBehaviour
         //Debug.Log(touch_count);
         touch_order++;
         touch_count++;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }
  
