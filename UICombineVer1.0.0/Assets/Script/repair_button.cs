@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds.Api;
 
 public class repair_button : MonoBehaviour
 {
-
+    public bool isTestMode;
     public void repaired()
     {
         Settings.complete_doll += repair_station.repair_doll;
@@ -36,14 +37,22 @@ public class repair_button : MonoBehaviour
 
     }
     // Start is called before the first frame update
+    
     void Start()
     {
-        
+       
+    }
+   
+
+   
+    
+
+// Update is called once per frame
+void Update()
+    {
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+    
 }

@@ -786,10 +786,10 @@ MonoBehaviour:
       - m_Target: {fileID: 545351200}
         m_TargetAssemblyTypeName: repair_button, Assembly-CSharp
         m_MethodName: advertise
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: GoogleMobileAdsDemoScript, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
