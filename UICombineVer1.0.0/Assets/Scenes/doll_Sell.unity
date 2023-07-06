@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 130097605}
   - component: {fileID: 130097604}
   - component: {fileID: 130097603}
-  - component: {fileID: 130097602}
+  - component: {fileID: 130097606}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -246,18 +246,6 @@ RectTransform:
   m_AnchoredPosition: {x: 230, y: -450}
   m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &130097602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130097600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f53545895b394b4591168fe2f258d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &130097603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 130097602}
+      - m_Target: {fileID: 130097606}
         m_TargetAssemblyTypeName: repair_button, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 1
@@ -352,6 +340,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130097600}
   m_CullTransparentMesh: 1
+--- !u!114 &130097606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130097600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6435f53077f8ed545b8dbd3e2a4161a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &177642599
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 545351198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f53545895b394b4591168fe2f258d63, type: 3}
+  m_Script: {fileID: 11500000, guid: 6435f53077f8ed545b8dbd3e2a4161a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &545351201
@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 1109087334}
   - component: {fileID: 1109087333}
   - component: {fileID: 1109087332}
+  - component: {fileID: 1109087336}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1093,7 +1094,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109087333}
+      - m_Target: {fileID: 1109087336}
         m_TargetAssemblyTypeName: repair_button, Assembly-CSharp
         m_MethodName: sell_now
         m_Mode: 1
@@ -1155,6 +1156,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109087330}
   m_CullTransparentMesh: 1
+--- !u!114 &1109087336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109087330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6435f53077f8ed545b8dbd3e2a4161a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1160785225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,7 +2601,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740676307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f53545895b394b4591168fe2f258d63, type: 3}
+  m_Script: {fileID: 11500000, guid: 6435f53077f8ed545b8dbd3e2a4161a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1740676310
