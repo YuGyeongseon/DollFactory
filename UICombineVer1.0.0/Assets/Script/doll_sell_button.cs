@@ -49,8 +49,9 @@ public class doll_sell_button : MonoBehaviour
 
     public void but1()
     {
-        Settings.complete_doll+=10;
-        Settings.incomplete_doll += 10;
+        Settings.complete_doll+=100;
+        Settings.incomplete_doll += 100;
+        Settings.coin+=100;
 
 
     }

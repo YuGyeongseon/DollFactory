@@ -15,12 +15,15 @@ public class Dot : MonoBehaviour
     }
 
     void OnMouseDown()
-    {
-        num = touch_order;
-        //Debug.Log(touch_count);
-        touch_order++;
-        touch_count++;
-        GetComponent<SpriteRenderer>().enabled = false;
+    {if (GenerateDots.dot_count >= GenerateDots.order.Length)
+        {
+
+            num = touch_order;
+            //Debug.Log(touch_count);
+            touch_order++;
+            touch_count++;
+            //GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 }
  

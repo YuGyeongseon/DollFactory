@@ -19,7 +19,7 @@ public class GenerateDots : MonoBehaviour
 
     public GameObject dot;
     public GameObject panel;
-    public float timer = 0;
+    static public float timer = 0;
     public float feverTimer = 0;
     public float dif_timer = 0;
     public static float tpd = 2f; // 점 생성 시간 간격
@@ -80,7 +80,7 @@ public class GenerateDots : MonoBehaviour
                 touchDot(); // 점생성후 동작함수
             }
 
-            if (timer > tpd * size * 2)
+            if (timer > tpd * order.Length+4)
             {
                 gameOver();
             } // 제한시간 초과 게임오버
