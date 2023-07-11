@@ -30,6 +30,7 @@ public class Main_Button : MonoBehaviour
     public void Shop_button()
     {
         SceneManager.LoadScene("Shop_Scene");
+        Page_control.pagenum = 3;
         
 
     }

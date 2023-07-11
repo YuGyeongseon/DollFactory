@@ -15,7 +15,8 @@ public class Dot : MonoBehaviour
     }
 
     void OnMouseDown()
-    {if (GenerateDots.dot_count >= GenerateDots.order.Length)
+    {
+        if (GenerateDots.dot_count >= GenerateDots.order.Length)
         {
 
             num = touch_order;

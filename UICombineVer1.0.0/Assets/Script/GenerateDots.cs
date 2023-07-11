@@ -15,8 +15,6 @@ public class GenerateDots : MonoBehaviour
     public Text score_indicator;
     private int doll;
     private int indoll;
-
-
     public GameObject dot;
     public GameObject panel;
     static public float timer = 0;
@@ -106,7 +104,7 @@ public class GenerateDots : MonoBehaviour
                 //{
                 random_x = Random.Range(min_x, max_x);
                 random_y = Random.Range(min_y, max_y);
-                //}while(checkOverlap(random_x,random_y));
+                //}while(checkOverlap(random_x,random_y)); do-while부분
                 xList.Add(random_x);
                 yList.Add(random_y);
                 order[i] = Instantiate(dot);
@@ -255,38 +253,56 @@ public class GenerateDots : MonoBehaviour
         if (shopDoll.selectDollNum == 1)
         {
             defection = 50;
+            FeverMode.a = 0;
+            FeverMode.cycle= 0;
         }
         else if (shopDoll.selectDollNum == 2)
         {
             defection = 45;
+            FeverMode.a = 3;
+            FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 3)
         {
             defection = 30;
+            FeverMode.a = 5;
+            FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 4)
         {
             defection = 25;
+            FeverMode.a = 10;
+            FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 5)
         {
             defection = 20;
+            FeverMode.a = 15;
+            FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 6)
         {
             defection = 15;
+            FeverMode.a = 20;
+            FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 7)
         {
             defection = 10;
+            FeverMode.a = 25;
+            FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 8)
         {
             defection = 5;
+            FeverMode.a = 30;
+            FeverMode.cycle = 7;
         }
         else if (shopDoll.selectDollNum == 9)
         {
             defection = 3;
+            FeverMode.a = 35;
+            FeverMode.cycle = 7;
         }
     }
 

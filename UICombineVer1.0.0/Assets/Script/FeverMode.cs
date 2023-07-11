@@ -9,12 +9,11 @@ public class FeverMode : MonoBehaviour
     public static int after_fever = 2;
     public static int i = 0;
     public static int three_waves = 0;
-    public int probab = 1;
+    static public int cycle;
+    static public int a; // 인형당 피버모드 확률
+    public int probab = 101;
     public bool dif_switch = true;
-    bool swith_timing;
-    float tpd;
-    int score;
-    int numm = 0;
+    
     public GameObject FeverBackground;
     public GameObject Background;
     // Start is called before the first frame update
@@ -22,6 +21,8 @@ public class FeverMode : MonoBehaviour
     {
         Background.SetActive(true);
         FeverBackground.SetActive(false); // 평상시 배경화면
+        Debug.Log(a);
+        Debug.Log(cycle);
     }
 
     // Update is called once per frame
@@ -31,7 +32,7 @@ public class FeverMode : MonoBehaviour
         {
             probability();
         }
-        if (probab ==0 && Score.score + notScore.notscore >= 3) // 피버모드 전환
+        if (probab ==0 && Score.score + notScore.notscore >= 3&&!fever_on) // 피버모드 전환
         {
             fever_on = true;
             dif_switch = false;
@@ -47,10 +48,10 @@ public class FeverMode : MonoBehaviour
             //     three_waves++;
             //     GetComponent<GenerateDots>().f = false;
             // }
-            probab = 1;
+            probab = 101;
         }
 
-        if (three_waves >= 3) // 피버모드 해제
+        if (three_waves >= cycle && fever_on) // 피버모드 해제
         {
             GetComponent<AudioSource>().Stop(); // 브금 재생
             GenerateDots.tpd = 2f; // 점생성 시간 빠르게
@@ -70,8 +71,8 @@ public class FeverMode : MonoBehaviour
     {
         if (Score.score + notScore.notscore > 3 && GenerateDots.dot_count == 0 && !fever_on && after_fever != 1)
         {
-            //Debug.Log("피버 연산 가동");
-            probab = Random.Range(1, 10) % 5;
+            Debug.Log("피버 연산 가동");
+            probab = Random.Range(1, 101);
         }
 
         return probab;

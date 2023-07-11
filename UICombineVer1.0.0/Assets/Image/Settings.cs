@@ -26,6 +26,8 @@ public class Settings : MonoBehaviour
     internal static int complete_doll;
     internal static int incomplete_doll;
 
+
+    public static bool[] is_effect = new bool[9] { false, false, false, false, false, false, false, false, false };
     public void sound_button()
     {
         vibrate();
