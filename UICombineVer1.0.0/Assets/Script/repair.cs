@@ -22,15 +22,21 @@ public class repair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Settings.incomplete_doll > 0 && repair_station.repair_doll < repair_station.storage[repair_station.station_level])
+        if (Settings.incomplete_doll > 0)
         {
             timer += Time.deltaTime;
             //Debug.Log(timer.ToString());
             if(timer >= repair_station.speed[repair_station.station_level]) {
                 Settings.incomplete_doll--;
-                repair_station.repair_doll++;
+                //repair_station.repair_doll++;
+                Settings.complete_doll++;
                 timer -= repair_station.speed[repair_station.station_level];
             }
+        }
+
+        if (Settings.incomplete_doll >= repair_station.storage[repair_station.station_level])
+        {
+            Settings.incomplete_doll = repair_station.storage[repair_station.station_level];
         }
     }
 }

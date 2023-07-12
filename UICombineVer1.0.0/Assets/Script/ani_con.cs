@@ -33,7 +33,7 @@ public class ani_con : MonoBehaviour
 
     public void doll_1() //인형 첫번째 업그레이드
     {
-        Debug.Log("dd");
+        //Debug.Log("dd");
         switch(shopDoll.selectDollNum)
         {
             case 1:

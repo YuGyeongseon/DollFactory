@@ -10,13 +10,24 @@ using GooglePlayGames.BasicApi;
 public class Main_Button : MonoBehaviour
 {
     string log;
+
+    public GameObject background;
+    public GameObject start_animation;
+
+    
+    private void main_move()
+    {
+        SceneManager.LoadScene("Game_Scene");
+    }
+
     public void Play_button()
     {
         //Settings.vibrate();
         Handheld.Vibrate();
-        SceneManager.LoadScene("Game_Scene");
-        
-        
+        background.SetActive(false);
+        start_animation.SendMessage("start");
+
+        Invoke("main_move", 0.5f);
     }
 
 
@@ -38,6 +49,7 @@ public class Main_Button : MonoBehaviour
     public void Achive_button()
     {
         Debug.Log("ACHIVE");
+        /*
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
       
@@ -52,6 +64,7 @@ public class Main_Button : MonoBehaviour
             // 로그인하지 않았을 때의 처리 (예: 로그인 창 표시)
             Debug.Log("Not logged in");
         }
+        */
     }
 
 
@@ -60,6 +73,8 @@ public class Main_Button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        background.SetActive(true);
         
     }
 

@@ -1,0 +1,349 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.15f1 (e8e88683f834) revision 15263878'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'ko' Physical Memory: 16247 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Users\slimh\Unity 2021.3.15f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/slimh/OneDrive/바탕 화면/ㅤ/인형공장/game/07-12/DollFactory-UI/UICombineVer1.0.0
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+1524
+Successfully changed project path to: C:/Users/slimh/OneDrive/바탕 화면/ㅤ/인형공장/game/07-12/DollFactory-UI/UICombineVer1.0.0
+C:/Users/slimh/OneDrive/바탕 화면/ㅤ/인형공장/game/07-12/DollFactory-UI/UICombineVer1.0.0
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [7156] Host "[IP] 192.168.254.25 [Port] 0 [Flags] 2 [Guid] 330831389 [EditorId] 330831389 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-Q64080CK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [7156] Host "[IP] 192.168.254.25 [Port] 0 [Flags] 2 [Guid] 330831389 [EditorId] 330831389 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-Q64080CK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 183.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.15f1 (e8e88683f834)
+[Subsystems] Discovering subsystems at path C:/Users/slimh/Unity 2021.3.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/slimh/OneDrive/바탕 화면/ㅤ/인형공장/game/07-12/DollFactory-UI/UICombineVer1.0.0/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Vendor:   NVIDIA
+    VRAM:     6023 MB
+    Driver:   31.0.15.1748
+Initialize mono
+Mono path[0] = 'C:/Users/slimh/Unity 2021.3.15f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/slimh/Unity 2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Users/slimh/Unity 2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/slimh/Unity 2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003524 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 145.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.772 seconds
+Domain Reload Profiling:
+	ReloadAssembly (772ms)
+		BeginReloadAssembly (73ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (580ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (143ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (345ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (145ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (142ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.014529 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\slimh\OneDrive\바탕 화면\ㅤ\인형공장\game\07-12\DollFactory-UI\UICombineVer1.0.0\Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\slimh\OneDrive\바탕 화면\ㅤ\인형공장\game\07-12\DollFactory-UI\UICombineVer1.0.0\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\slimh\OneDrive\바탕 화면\ㅤ\인형공장\game\07-12\DollFactory-UI\UICombineVer1.0.0\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 138.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  9.258 seconds
+Domain Reload Profiling:
+	ReloadAssembly (9259ms)
+		BeginReloadAssembly (112ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (8721ms)
+			LoadAssemblies (5841ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (766ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (1976ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (138ms)
+				BeforeProcessingInitializeOnLoad (152ms)
+				ProcessInitializeOnLoadAttributes (369ms)
+				ProcessInitializeOnLoadMethodAttributes (1307ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.50 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5656 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 93 unused Assets / (57.4 KB). Loaded Objects now: 6070.
+Memory consumption went from 201.6 MB to 201.6 MB.
+Total: 7.855100 ms (FindLiveObjects: 0.522900 ms CreateObjectMapping: 0.711700 ms MarkObjects: 6.385100 ms  DeleteObjects: 0.233800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3781.471204 seconds.
+  path: Assets/Image/Caracters.PNG
+  artifactKey: Guid(77954ebfcaff6634fad44711901b4df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/Caracters.PNG using Guid(77954ebfcaff6634fad44711901b4df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e678a16d88920cf42ee3a06fb29cdaa') in 0.273673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Image/doll7_1.png
+  artifactKey: Guid(213d7a632c02a7e409b6a71df57f7eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll7_1.png using Guid(213d7a632c02a7e409b6a71df57f7eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e82e88276299cf92eb4c9de7e35f0ea') in 0.072189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Image/dolls.png
+  artifactKey: Guid(979b0221e130bde4b87062e3c5e4af6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/dolls.png using Guid(979b0221e130bde4b87062e3c5e4af6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '466d5652924f62804b9a78f8b0631e5a') in 0.225323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Image/gameover_achive.png
+  artifactKey: Guid(283f79c0f0350e345ae3bac069f49251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/gameover_achive.png using Guid(283f79c0f0350e345ae3bac069f49251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36d3123badeed9efaa5217bfc14f9a9') in 0.068153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Image/dots.png
+  artifactKey: Guid(f7515d978b72fe94fa79be3c7cccc71e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/dots.png using Guid(f7515d978b72fe94fa79be3c7cccc71e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4d2db207ed87df619a918cf37628182') in 0.029452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Image/OIL3.png
+  artifactKey: Guid(2e73c63a055ff564eaf22866afb7b051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/OIL3.png using Guid(2e73c63a055ff564eaf22866afb7b051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f0e72232c9b9b50d96809829a54f29') in 0.154195 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Image/Game_background.jpg
+  artifactKey: Guid(f7e72479271e4a549b245a12aceabb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/Game_background.jpg using Guid(f7e72479271e4a549b245a12aceabb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9327c5c5af75f7b783043532a1f5279') in 0.131212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Image/doll2_2.png
+  artifactKey: Guid(8fd831941773daa44af1a1757076365d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll2_2.png using Guid(8fd831941773daa44af1a1757076365d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af822fe672ebd4a1e5db79da15cbe4e3') in 0.080214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Image/doll9_1.png
+  artifactKey: Guid(f3ac8c581aac79846a9874e856a6a55b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll9_1.png using Guid(f3ac8c581aac79846a9874e856a6a55b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82246da1005d18cbc9234c464c03e6df') in 0.063942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Image/shop_tag.png
+  artifactKey: Guid(62743355780748646b242cba9cfbfa96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/shop_tag.png using Guid(62743355780748646b242cba9cfbfa96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd749783599783adcdcb5bad2d4d0297f') in 0.137956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Image/gamePad.jpg
+  artifactKey: Guid(e8193bcaa7f54cc4494324986e1d8bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/gamePad.jpg using Guid(e8193bcaa7f54cc4494324986e1d8bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b057ae3a97e1392a3566e48aa2dfd2df') in 0.074775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Image/shop_check.png
+  artifactKey: Guid(5504eaf0581240041903cabaa1b7d88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/shop_check.png using Guid(5504eaf0581240041903cabaa1b7d88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34e3e09ea29052efa06e9c1bdb1259a9') in 0.109525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Image/doll4_2.png
+  artifactKey: Guid(4d13d4e1e074f7f47b4fddc33afc77d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll4_2.png using Guid(4d13d4e1e074f7f47b4fddc33afc77d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43d33aba1133f5719b39b28380917583') in 0.054800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Image/Title.PNG
+  artifactKey: Guid(0e9f8f0f406afc04da9b41baafc1e912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/Title.PNG using Guid(0e9f8f0f406afc04da9b41baafc1e912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f64acbc5e36ddfc33a1aa5c037765c') in 0.199149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Image/gamover_home.png
+  artifactKey: Guid(4db4dd900edaa194fb2dd396d656991a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/gamover_home.png using Guid(4db4dd900edaa194fb2dd396d656991a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '341ca1a6292d01cb6a1241a983001ec5') in 0.039709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Image/IMG_0187.PNG
+  artifactKey: Guid(327cb927ab94cc84bac827f5fbfa4c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/IMG_0187.PNG using Guid(327cb927ab94cc84bac827f5fbfa4c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22260bdcc233d035a24b39afa65b59d6') in 0.045261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Image/doll4_1.png
+  artifactKey: Guid(026cce04739f53145a62dd382cfbf0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll4_1.png using Guid(026cce04739f53145a62dd382cfbf0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e0468e708bfafe6b3747a8f0eeef9c6') in 0.086685 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Image/shop_ui.png
+  artifactKey: Guid(20dbf3128de706f4385eb34d4e3b23dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/shop_ui.png using Guid(20dbf3128de706f4385eb34d4e3b23dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8744ea0cc431314f0aca6363d3f81fb') in 0.133145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Image/OIL4.png
+  artifactKey: Guid(42ccb5086c9e1974bbe8ce63f0a4a89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/OIL4.png using Guid(42ccb5086c9e1974bbe8ce63f0a4a89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2d6a5dc76f09ba795e760006def432d') in 0.132464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Image/complete_doll.png
+  artifactKey: Guid(d44845986c81d614fbe3ad03a445f080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/complete_doll.png using Guid(d44845986c81d614fbe3ad03a445f080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e2a4a16ed8a4c04dfaa1bb93a435ce') in 0.131245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Image/doll3_2.png
+  artifactKey: Guid(7597fe9ad8d44c84f9b6d5aa8d3bcaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll3_2.png using Guid(7597fe9ad8d44c84f9b6d5aa8d3bcaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0ad051e1a4d873fb746c04abf3b052a') in 0.055350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Image/dollAni.png
+  artifactKey: Guid(57b003cea8444ee4f9a244db96a291d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/dollAni.png using Guid(57b003cea8444ee4f9a244db96a291d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '168d92802521af3e019c1c92f92c05ca') in 0.138786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Image/dollAni2.png
+  artifactKey: Guid(29ea8bbe0738f7340b1fd132e0174ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/dollAni2.png using Guid(29ea8bbe0738f7340b1fd132e0174ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ab8c5aec05e42c0c40b0f599ec67b5') in 0.117717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Image/doll3_3.png
+  artifactKey: Guid(d9d56bb41f7f7674c9a2c0107fd5b073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll3_3.png using Guid(d9d56bb41f7f7674c9a2c0107fd5b073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98958bccea6dde38a59d8d92edd2ebb6') in 0.048102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Image/Main_Buttons.PNG
+  artifactKey: Guid(6c7d58b07964021429253dc415418d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/Main_Buttons.PNG using Guid(6c7d58b07964021429253dc415418d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f074299d80c78342a7dd825525bb80fe') in 0.029238 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Image/doll1_1.png
+  artifactKey: Guid(5cbf185b21db40d44abf92bb53b5cc31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll1_1.png using Guid(5cbf185b21db40d44abf92bb53b5cc31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6be6391f3a2a43190db40eddc6427d9') in 0.040073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Image/doll5_2.png
+  artifactKey: Guid(63e8a114efb15d347a997581a058610c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll5_2.png using Guid(63e8a114efb15d347a997581a058610c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85d91f060117c5bd84f84dd43e72479') in 0.047800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Image/doll8_1.png
+  artifactKey: Guid(f1a1b883e162aef428e526f65a76966b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll8_1.png using Guid(f1a1b883e162aef428e526f65a76966b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725d73c46eda7b876c6d121ccb5426ae') in 0.077251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Image/gameover_retry.png
+  artifactKey: Guid(258881004b68ec64f8c122887e344357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/gameover_retry.png using Guid(258881004b68ec64f8c122887e344357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5599d63e25767224c2a1ac2dc6ae0fa0') in 0.085219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Image/doll7_2.png
+  artifactKey: Guid(add9b1285c738e8438210254b2ac2a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/doll7_2.png using Guid(add9b1285c738e8438210254b2ac2a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a1ae33debb26a874f42062082d3caeb') in 0.067797 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
