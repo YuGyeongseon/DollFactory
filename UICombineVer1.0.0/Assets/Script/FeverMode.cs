@@ -21,8 +21,8 @@ public class FeverMode : MonoBehaviour
     {
         Background.SetActive(true);
         FeverBackground.SetActive(false); // 평상시 배경화면
-        Debug.Log(a);
-        Debug.Log(cycle);
+        //Debug.Log(a);
+        //Debug.Log(cycle);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class FeverMode : MonoBehaviour
         {
             probability();
         }
-        if (probab ==0 && Score.score + notScore.notscore >= 3&&!fever_on) // 피버모드 전환
+        if (probab <=a && Score.score + notScore.notscore >= 3&&!fever_on) // 피버모드 전환
         {
             fever_on = true;
             dif_switch = false;
@@ -58,7 +58,7 @@ public class FeverMode : MonoBehaviour
             GenerateDots.spw = 1; // 점수 2점
             Background.SetActive(true);
             FeverBackground.SetActive(false);
-            GetComponent<GenerateDots>().feverTimer = 0;
+            //GetComponent<GenerateDots>().feverTimer = 0;
             GenerateDots.order = new GameObject[GenerateDots.size];
             three_waves = 0;
             dif_switch = true;

@@ -10,13 +10,25 @@ using GooglePlayGames.BasicApi;
 public class Main_Button : MonoBehaviour
 {
     string log;
+    public GameObject background;
+
+    public GameObject start_animation;
+
+
+    private void main_move()
+    {
+        SceneManager.LoadScene("Game_Scene");
+    }
     public void Play_button()
     {
         //Settings.vibrate();
         Handheld.Vibrate();
-        SceneManager.LoadScene("Game_Scene");
-        
-        
+        background.SetActive(false);
+        start_animation.SendMessage("start");
+        main_start_ani_con.Instantiate(start_animation);
+
+        Invoke("main_move", 0.5f);
+
     }
 
 
@@ -60,7 +72,7 @@ public class Main_Button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        background.SetActive(true);
     }
 
     // Update is called once per frame

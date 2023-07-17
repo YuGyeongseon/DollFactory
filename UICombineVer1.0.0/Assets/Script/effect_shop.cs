@@ -34,7 +34,7 @@ public class effect_shop : MonoBehaviour
                 effect_list[i] = effects[ UnityEngine.Random.Range(0,9)];
                 for (int j = 0; j < i; j++)
                 {
-                    if (effect_list[i] == effect_list[j] || Settings.is_effect[effect_list[i-1]])
+                    if (effect_list[i] == effect_list[j] || Settings.is_effect[effect_list[i]])
                     {
                         ch += 1;
                     }

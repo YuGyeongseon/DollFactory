@@ -10,21 +10,25 @@ public class Dot : MonoBehaviour
     //public int[] order = new int[3]; //점 터치순서 저장하기 위한 배열
     void Start() 
     {
-      //  GameObject DotGenerator = GameObject.Find("DotGenerator");
-        //order = DotGenerator.GetComponent<GenerateDots>().order;    
     }
 
     void OnMouseDown()
     {
-        if (GenerateDots.dot_count >= GenerateDots.order.Length)
+        // if (GenerateDots.dot_count >= GenerateDots.order.Length)
+        // {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (GetComponent<CircleCollider2D>().OverlapPoint(mousePosition))
         {
 
             num = touch_order;
             //Debug.Log(touch_count);
             touch_order++;
             touch_count++;
-            //GetComponent<SpriteRenderer>().enabled = false;
         }
+        if (GetComponent<SpriteRenderer>().enabled)
+            GetComponent<SpriteRenderer>().enabled = false;
     }
+    //}
 }
+    
  

@@ -18,10 +18,10 @@ public class GenerateDots : MonoBehaviour
     public GameObject dot;
     public GameObject panel;
     static public float timer = 0;
-    public float feverTimer = 0;
+    //public float feverTimer = 0;
     public float dif_timer = 0;
-    public static float tpd = 2f; // 점 생성 시간 간격
-    public static float spw = 1; // 웨이브 당 제공점수
+    public static float tpd; // 점 생성 시간 간격
+    public static float spw; // 웨이브 당 제공점수
     public bool f = false; // FeverMode의 int three_waves 와 연동
     int defection;
     float max_x;
@@ -33,7 +33,7 @@ public class GenerateDots : MonoBehaviour
     public bool wave = false;
     public bool GameOver = false;
     bool def = true;
-    public static int dot_count = 0; // 생성된 점의 개수
+    public static int dot_count; // 생성된 점의 개수
     public static int size;
     public static GameObject[] order;
     List<float> xList;
@@ -55,9 +55,16 @@ public class GenerateDots : MonoBehaviour
         min_x = panel.GetComponent<SpriteRenderer>().bounds.min.x + 0.5f;
         min_y = panel.GetComponent<SpriteRenderer>().bounds.min.y + 0.5f;
         defectRate();
-        Debug.Log(defection);
         doll = 0;
         indoll = 0;
+        tpd = 2f;
+        spw = 1f;
+        Dot.touch_order = 0;
+        Dot.touch_count = 0;
+        Debug.Log(FeverMode.a);
+        Debug.Log(FeverMode.cycle);
+        FeverMode.fever_on = false;
+        FeverMode.after_fever = 0;
 
     }
     void Update()
@@ -70,9 +77,12 @@ public class GenerateDots : MonoBehaviour
                 difficulty();
             }
             timer += Time.deltaTime;
-            feverTimer += Time.deltaTime;
+            //feverTimer += Time.deltaTime;
             dif_timer += Time.deltaTime;
-            dotGen(); // 점생성 함수
+            if (dot_count < size)
+            {
+                dotGen(); // 점생성 함수
+            }
             if (Dot.touch_order == order.Length)
             {
                 touchDot(); // 점생성후 동작함수
@@ -100,11 +110,11 @@ public class GenerateDots : MonoBehaviour
 
             if (wave)
             {
-                //do
-                //{
-                random_x = Random.Range(min_x, max_x);
-                random_y = Random.Range(min_y, max_y);
-                //}while(checkOverlap(random_x,random_y)); do-while부분
+                do
+                {
+                    random_x = Random.Range(min_x, max_x);
+                    random_y = Random.Range(min_y, max_y);
+                }while(checkOverlap(random_x, random_y)); //do-while부분
                 xList.Add(random_x);
                 yList.Add(random_y);
                 order[i] = Instantiate(dot);
@@ -116,12 +126,12 @@ public class GenerateDots : MonoBehaviour
 
         if (timer > tpd * order.Length + 1 && dot_count == order.Length)
         {
-            foreach (GameObject i in order)
-            {
+            //foreach (GameObject i in order)
+            //{
 
-                if (i.GetComponent<SpriteRenderer>().enabled)
-                    i.GetComponent<SpriteRenderer>().enabled = false;
-            } // 점 모습 사라짐
+            //    if (i.GetComponent<SpriteRenderer>().enabled)
+            //        i.GetComponent<SpriteRenderer>().enabled = false;
+            //} // 점 모습 사라짐
             dot_count++;
         }
 
@@ -231,14 +241,7 @@ public class GenerateDots : MonoBehaviour
             order = new GameObject[size];
         }
     }
-    void getCoord() // 점 좌표 설정
-    {
-        do
-        {
-            random_x = Random.Range(min_x, max_x);
-            random_y = Random.Range(min_y, max_y);
-        } while (size == 1);
-    }
+   
 
     void thousand() // 1000점 이후 실행
     {
@@ -308,24 +311,15 @@ public class GenerateDots : MonoBehaviour
 
     bool checkOverlap(float x, float y) // 점 위치 중복 방지
     {
-        int a = 0;
-        foreach (float element in xList)
+        bool a = false;
+        for (int i = 0; i < dot_count - 1; i++)
         {
-            if (x <= element + 0.5 && x >= element - 0.5)
-            {
-                a++;
-            }
+            if (x >= xList[i] - 0.3 && x <= xList[i] + 0.3)
+                if (y >= yList[i] - 0.3 && y <= yList[i] + 0.3)
+                    a = true;
         }
 
-        foreach (float element in yList)
-        {
-            if (y <= element + 0.5 && x <= element - 0.5)
-            {
-                a++;
-            }
-        }
-
-        if (a != 0)
+        if (a)
             return true;
         else
             return false;
