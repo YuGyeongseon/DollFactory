@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class main_start_ani_con : MonoBehaviour
 {
@@ -12,10 +12,7 @@ public class main_start_ani_con : MonoBehaviour
         ani.PlayQueued("start_main");
         //ani.Play();
     }
-    public void start_animation()
-    {
-        ani.Play();
-    }
+
     void Start()
     {
         ani = GetComponent<Animation>();

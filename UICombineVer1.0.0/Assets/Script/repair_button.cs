@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class repair_button : MonoBehaviour
 {
+    public Image repair_station_img;
+    public Sprite[] img = new Sprite[3];
+    public Text text1;
+    public Text text2;
     public bool isTestMode;
     public GameObject pop_up;
     public GameObject O_button;
@@ -41,13 +47,12 @@ public class repair_button : MonoBehaviour
         //    repair_station.station_level++;
         //    Settings.coin -= 1500;
         //}
-
+        repair_station_img.sprite = img[repair_station.station_level];
     }
     // Start is called before the first frame update
     
     void Start()
     {
-       
     }
    
 

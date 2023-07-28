@@ -11,6 +11,8 @@ public class Main_Button : MonoBehaviour
 {
     string log;
     public GameObject background;
+    public GameObject inGameBackground;
+
 
     public GameObject start_animation;
 
@@ -23,9 +25,10 @@ public class Main_Button : MonoBehaviour
     {
         //Settings.vibrate();
         Handheld.Vibrate();
+
+        inGameBackground.SetActive(true);
         background.SetActive(false);
         start_animation.SendMessage("start");
-        main_start_ani_con.Instantiate(start_animation);
 
         Invoke("main_move", 0.5f);
 
@@ -73,6 +76,8 @@ public class Main_Button : MonoBehaviour
     void Start()
     {
         background.SetActive(true);
+        inGameBackground.SetActive(false);
+
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class GenerateDots : MonoBehaviour
     private int indoll;
     public GameObject dot;
     public GameObject panel;
+
     static public float timer = 0;
     //public float feverTimer = 0;
     public float dif_timer = 0;

@@ -12,11 +12,16 @@ public class shopDoll : MonoBehaviour
     public string Name;
 
     public Image img;
-    public int doll_num = 1;
+    public int doll_num;
     public static bool isBuy;
     public static int selectDollNum;
     public GameObject pop_up;
     public GameObject title;
+
+    public Text coin;
+    public Image doll_img;
+
+    public Sprite doll_imgs;
 
     public Text textObjectProfitablity;
     public Text textObjectCircleNum;
@@ -51,7 +56,9 @@ public class shopDoll : MonoBehaviour
 
 
             pop_up.SetActive(true);
-            title.SendMessage("UpdateTitle", 1);
+
+            coin.text = Settings.price[doll_num].ToString();
+            doll_img.sprite = doll_imgs;
 
 
         }

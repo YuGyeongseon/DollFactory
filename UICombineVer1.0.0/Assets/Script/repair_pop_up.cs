@@ -5,14 +5,28 @@ using UnityEngine.UI;
 
 public class repair_pop_up : MonoBehaviour
 {
+    private Image button_image;
+    public Sprite[] img = new Sprite[3];
     public GameObject popup;
     public Text Title;
+    public Text price1;
+    public Text price2;
 
-    private int type;
+
+    public GameObject station_img;
+    public GameObject price_1;
+    public GameObject price_2;
+    public GameObject price_3;
+    public static int type;
 
     public void upgrade_popup()
     {
+        station_img.SetActive(true);
+        price_1.SetActive(true);
+        price_2.SetActive(false);
+        price_3.SetActive(false);
         type = 1;
+        button_image.sprite = img[type];
         Debug.Log("ff");
         popup.SetActive(true);
         switch (repair_station.station_level)
@@ -36,8 +50,12 @@ public class repair_pop_up : MonoBehaviour
 
     public void sell_now_popup()
     {
+        station_img.SetActive(false);
+        price_1.SetActive(false);
+        price_2.SetActive(true);
+        price_3.SetActive(true);
         type = 2;
-
+        button_image.sprite = img[type];
     }
 
     public void on_click()
@@ -74,6 +92,7 @@ public class repair_pop_up : MonoBehaviour
     void Start()
     {
         popup.SetActive(false);
+        button_image = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -81,7 +100,9 @@ public class repair_pop_up : MonoBehaviour
     {
         if(type == 2)
         {
-            Title.text = "판매 금액: " + Settings.incomplete_doll+"\n판매하시겠습니까?";
+            //Title.text = "판매 금액: " + Settings.incomplete_doll+"\n판매하시겠습니까?";
+            price1.text = (Settings.incomplete_doll * 3).ToString();
+            price2.text = Settings.incomplete_doll.ToString();
         }
     }
 }
