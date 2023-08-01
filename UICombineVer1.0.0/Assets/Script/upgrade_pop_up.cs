@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 
@@ -12,7 +13,7 @@ public class upgrade_pop_up : MonoBehaviour
     public AudioSource audiosource;
     public Text Title;
     public GameObject popup;
-
+    public int money;
 
     // Start is called before the first frame update
     void Start()
@@ -27,24 +28,22 @@ public class upgrade_pop_up : MonoBehaviour
 
             repair_station.station_level++;
             Settings.coin -= 1000;
+            Title.text = "1500";
             //popup.SetActive(false);
             audiosource.PlayOneShot(upgradeSound);
         }
         else if (repair_station.station_level == 2 && Settings.coin >= 1500)
         {
-
+            
             repair_station.station_level++;
 
             Settings.coin -= 1500;
-            //popup.SetActive(false);
+            popup.SetActive(false);
             audiosource.PlayOneShot(upgradeSound);
         }
         else
         {
             audiosource.PlayOneShot(buttonClickSound);
-
-            Title.text = "코인이 부족합니다.";
-
         }
     }
     // Update is called once per frame
@@ -54,13 +53,12 @@ public class upgrade_pop_up : MonoBehaviour
         {
 
             case 1:
-
-                Title.text = "1000 coin";
-
+                money = 1000;
+                //Title.text = "1000";
                 break;
             case 2:
-
-                Title.text = "1500 coin";
+                money = 1500;
+                //Title.text = "1500";
 
                 break;
             case 3:

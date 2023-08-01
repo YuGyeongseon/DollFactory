@@ -2,6 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class Vibration
+{
+#if UNITY_ANDROID && !UNITY_EDITOR
+    public static AndroidJavaClass AndroidPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+    public static AndroidJavaObject AndroidcurrentActivity = AndroidPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+    public static AndroidJavaObject AndroidVibrator = AndroidcurrentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
+#endif
+    public static void Vibrate()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        AndroidVibrator.Call("vibrate");
+#else
+        Handheld.Vibrate();
+#endif
+    }
+
+    public static void Vibrate(long milliseconds)
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        AndroidVibrator.Call("vibrate", milliseconds);
+#else
+        Handheld.Vibrate();
+#endif
+    }
+    public static void Vibrate(long[] pattern, int repeat)
+    {
+
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        AndroidVibrator.Call("vibrate", pattern, repeat);
+#else
+        Handheld.Vibrate();
+#endif
+    }
+
+    public static void Cancel()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            AndroidVibrator.Call("cancel");
+#endif
+    }
+}
 public class Dot : MonoBehaviour
 {
     public static int touch_count = 0; // 터치된 점의 개수
@@ -12,23 +54,22 @@ public class Dot : MonoBehaviour
     {
     }
 
-    void OnMouseDown()
+    void OnMouseDown()// 클릭시
     {
-        // if (GenerateDots.dot_count >= GenerateDots.order.Length)
-        // {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (GetComponent<CircleCollider2D>().OverlapPoint(mousePosition))
+        if (GenerateDots.dot_count >= GenerateDots.size + 1)
         {
-
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (GetComponent<CircleCollider2D>().OverlapPoint(mousePosition))
+            {
+            
             num = touch_order;
-            //Debug.Log(touch_count);
             touch_order++;
             touch_count++;
         }
-        if (GetComponent<SpriteRenderer>().enabled)
-            GetComponent<SpriteRenderer>().enabled = false;
+        Handheld.Vibrate();
+        Vibration.Vibrate(100);
     }
-    //}
+  }
 }
     
  

@@ -13,6 +13,7 @@ public class repair_button : MonoBehaviour
     public Text text2;
     public bool isTestMode;
     public GameObject pop_up;
+    public GameObject complete_pop_up;
     public GameObject O_button;
     //public void repaired()
     //{
@@ -36,7 +37,14 @@ public class repair_button : MonoBehaviour
     }
     public void Upgrade()
     {
-        pop_up.SetActive(true);
+        if (repair_station.station_level <= 2)
+        {
+            pop_up.SetActive(true);
+        }
+        else
+        {
+            complete_pop_up.SetActive(true);
+        }
         //O_button.SendMessage("upgrade_popup");
         //if (repair_station.station_level == 1&&Settings.coin>=1000) {
         //    repair_station.station_level++;
@@ -53,6 +61,7 @@ public class repair_button : MonoBehaviour
     void Start()
     {
         pop_up.SetActive(false);
+        complete_pop_up.SetActive(false);
     }
    
 
@@ -62,7 +71,10 @@ public class repair_button : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        repair_station_img.sprite = img[repair_station.station_level];
+        if (repair_station.station_level <= 2)
+        {
+            repair_station_img.sprite = img[repair_station.station_level];
+        }
     }
 
 

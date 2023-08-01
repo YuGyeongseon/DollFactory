@@ -10,6 +10,7 @@ public class back_to_main : MonoBehaviour
     {
 
         SceneManager.LoadScene("Main_Scene");
+        GenerateDots.timer = 0;
     }
 
     // Start is called before the first frame update

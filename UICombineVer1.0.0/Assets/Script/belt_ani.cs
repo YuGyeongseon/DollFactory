@@ -13,14 +13,13 @@ public class belt_ani : MonoBehaviour
 
     private void belt_in()
     {
-
-
+        Debug.Log("BELT IN");
         ani.PlayQueued ("Belt_in");
     }
 
     private void belt_out()
     {
-
+        Debug.Log("BELT OUT");
         ani.PlayQueued("Belt_out");
     }
 

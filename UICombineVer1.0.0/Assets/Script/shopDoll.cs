@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class shopDoll : MonoBehaviour
 
 
     public string defect_rate;
+    public Sprite[] new_img = new Sprite[2];
 
     public static void Buy()
     {
@@ -97,25 +99,32 @@ public class shopDoll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Settings.dollOwned[doll_num])
         {
+            img.sprite = new_img[0];
             if (doll_num == doll_img_cont.doll_no)
             {
-                img.color = new Color(1.0f, 1.0f, 1.0f);
+                //img.color = new Color(1.0f, 1.0f, 1.0f);
+                img.rectTransform.sizeDelta = new Vector2(300, 300);
             }
             else
             {
-                img.color = new Color(0.5f, 0.5f, 0.5f);
+                //img.color = new Color(0.5f, 0.5f, 0.5f);
+                img.rectTransform.sizeDelta = new Vector2(260, 260);
             }
         }
         else if (doll_num == doll_img_cont.doll_no)
         {
-            img.color = new Color(0.25f, 0.25f, 0.25f);
+            //img.color = new Color(0.25f, 0.25f, 0.25f);
+            img.sprite = new_img[1];
         }
         else
         {
-            img.color = new Color(0.0f, 0.0f, 0.0f);
+            //img.color = new Color(0.0f, 0.0f, 0.0f);
+            img.sprite = new_img[1];
         }
 
     }
+
 }

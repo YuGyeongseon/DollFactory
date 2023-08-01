@@ -211,7 +211,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f998256978b6445479f437ca65342d0c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 374b11d17152b284b86e1986ae337525, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -927,8 +927,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: ecc7cbd1d7198e94ca08b61a6f875726, type: 3}
   - {fileID: 21300000, guid: 37baf2f7c689bb84ab223cd2a49674ed, type: 3}
+  - {fileID: 21300000, guid: ecc7cbd1d7198e94ca08b61a6f875726, type: 3}
 --- !u!114 &530214166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,10 +1175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 2340}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

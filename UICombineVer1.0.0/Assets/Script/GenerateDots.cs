@@ -18,13 +18,14 @@ public class GenerateDots : MonoBehaviour
     public GameObject dot;
     public GameObject panel;
 
-    static public float timer = 0;
-    //public float feverTimer = 0;
-    public float dif_timer = 0;
-    public static float tpd; // 점 생성 시간 간격
+    static public float cycle_timer = 0; // 사이클마다 초기화
+    public static float timer = 0; // 플레이 경과시간
+    static public float vanish = 0.25f; // 점 사라지는 시간
+    [SerializeField] public static float dotgenTime; // 점 생성 소요시간
     public static float spw; // 웨이브 당 제공점수
     public bool f = false; // FeverMode의 int three_waves 와 연동
     int defection;
+    [SerializeField] int probab, probab3, probab4, probab5, probab6, probab7;
     float max_x;
     float max_y;
     float min_x;
@@ -43,29 +44,19 @@ public class GenerateDots : MonoBehaviour
     public AudioClip gameOverBgm;
     void Start()
     {
+        SpriteRenderer spriteRenderer = panel.gameObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+            return;
+        float _width = spriteRenderer.bounds.size.x;
+        float _height = spriteRenderer.bounds.size.y;
+        float worldScreenHeight = (float)(Camera.main.orthographicSize * 2.0);
+        float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
+        gameObject.transform.localScale = new Vector3(worldScreenWidth / _width, worldScreenHeight / _height, 1);
+        probab = Random.Range(0, 101);
         pop_up.SetActive(false);
-        //float _width = GetComponent<SpriteRenderer>().bounds.size.x;
-        //float _height = spriteRenderer.bounds.size.y;
+        cycle_timer = 0;
 
-        //SpriteRenderer spriteRenderer = panel.gameObject.GetComponent<SpriteRenderer>();
-
-        //if (spriteRenderer == null)
-        //    return;
-
-        //gameObject.transform.localScale = new Vector3(1, 1, 1);
-
-        //float _width = spriteRenderer.bounds.size.x;
-        //float _height = spriteRenderer.bounds.size.y;
-
-        //float worldScreenHeight = (float)(Camera.main.orthographicSize * 2.0);
-        //float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
-
-
-        //gameObject.transform.localScale = new Vector3(worldScreenWidth / _width, worldScreenHeight / _height, 1);
-
-        timer = 0;
         dot_count = 0;
-        size = 3;
         order = new GameObject[size];
         xList = new List<float>();
         yList = new List<float>();
@@ -78,18 +69,12 @@ public class GenerateDots : MonoBehaviour
         defectRate();
         doll = 0;
         indoll = 0;
-        tpd = 2f;
         spw = 1f;
         Dot.touch_order = 0;
         Dot.touch_count = 0;
-        Debug.Log(FeverMode.a);
-        Debug.Log(FeverMode.cycle);
         FeverMode.fever_on = false;
         FeverMode.after_fever = 0;
-        Debug.Log(max_x);
-        Debug.Log(max_y);
-        Debug.Log(min_x);
-        Debug.Log(min_y);
+        
 
 
     }
@@ -102,10 +87,10 @@ public class GenerateDots : MonoBehaviour
             {
                 difficulty();
             }
+            cycle_timer += Time.deltaTime;
             timer += Time.deltaTime;
             //feverTimer += Time.deltaTime;
-            dif_timer += Time.deltaTime;
-            if (dot_count < size)
+            if (dot_count < size + 1)
             {
                 dotGen(); // 점생성 함수
             }
@@ -114,7 +99,7 @@ public class GenerateDots : MonoBehaviour
                 touchDot(); // 점생성후 동작함수
             }
 
-            if (timer > tpd * order.Length+4)
+            if (cycle_timer > dotgenTime * 2 + vanish)
             {
                 gameOver();
             } // 제한시간 초과 게임오버
@@ -128,7 +113,7 @@ public class GenerateDots : MonoBehaviour
 
         for (int i = 0; i < order.Length; i++)
         {
-            if (timer > tpd * (i + 1) && dot_count == i)
+            if (cycle_timer > dotgenTime / order.Length * i && dot_count == i)
             {
                 wave = true;
                 dot_count++;
@@ -149,15 +134,19 @@ public class GenerateDots : MonoBehaviour
             }
 
         }
-
-        if (timer > tpd * order.Length + 1 && dot_count == order.Length)
+        if (cycle_timer >= dotgenTime + vanish)
         {
-            //foreach (GameObject i in order)
-            //{
-
-            //    if (i.GetComponent<SpriteRenderer>().enabled)
-            //        i.GetComponent<SpriteRenderer>().enabled = false;
-            //} // 점 모습 사라짐
+            Debug.Log("사라짐");
+            foreach (GameObject i in order)
+            {
+                Debug.Log("사라짐");
+                if (i.GetComponent<SpriteRenderer>().enabled)
+                {
+                    Debug.Log("사라짐");
+                    i.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            } // 점 모습 사라짐
+            Debug.Log("사라짐");
             dot_count++;
 
             gameObject.GetComponent<AudioSource>().Play();
@@ -201,7 +190,7 @@ public class GenerateDots : MonoBehaviour
                 FeverMode.three_waves++;
                 Debug.Log(FeverMode.three_waves);
             }
-            timer = 0;
+            cycle_timer = 0;
             dot_count = 0;
             Dot.touch_order = 0;
             Dot.touch_count = 0;
@@ -214,6 +203,7 @@ public class GenerateDots : MonoBehaviour
                 Destroy(i);
             }
             gameObject.GetComponent<AudioSource>().Play();
+            probab = Random.Range(0, 101);
 
         }
 
@@ -228,14 +218,13 @@ public class GenerateDots : MonoBehaviour
     {
         GameOver = true;
         Debug.Log("Game Over!");
-        tpd = 2f;
 
 
         //SceneManager.LoadScene(7);
         size = 3;
         Score.score = 0;
         spw = 1;
-        timer = 0;
+        cycle_timer = 0;
         dot_count = 0;
         Dot.touch_order = 0;
         Dot.touch_count = 0;
@@ -248,28 +237,122 @@ public class GenerateDots : MonoBehaviour
         score_indicator.text = Score.score.ToString();
         audioSource.PlayOneShot(gameOverBgm);
         pop_up.SetActive(true);
+        Vibration.Vibrate(500);
     }
-    void difficulty() // 점 개수 추가 
+    void difficulty() //  시간 경과 할 수록 각종 수치 변경 
     {
-        if (dif_timer >= 60 && dot_count == 0)
+        if (timer <=20)
         {
-            size = 7;
-            order = new GameObject[size];
+            probab3 = 75;
+            probab4 = 95;
+            probab5 = 100;
+            probab6 = -1;
+            probab7 = -1;
+            Debug.Log("시작");
         }
-        else if (dif_timer >= 45 && dot_count == 0)
+        else if (timer <= 40)
         {
-            size = 6;
-            order = new GameObject[size];
+            probab3 = 55;
+            probab4 = 80;
+            probab5 = 95;
+            probab6 = 100;
+            probab7 = -1;
+            Debug.Log("20초 경과");
         }
-        else if (dif_timer >= 30 && dot_count == 0)
+        else if (timer <= 60)
         {
-            size = 5;
-            order = new GameObject[size];
+            probab3 = 30;
+            probab4 = 60;
+            probab5 = 90;
+            probab6 = 100;
+            probab7 = -1;
+            Debug.Log("40초 경과");
         }
-        else if (dif_timer >= 15 && dot_count == 0)
+        else if (timer <= 80)
+        {
+            probab3 = 20;
+            probab4 = 40;
+            probab5 = 60;
+            probab6 = 80;
+            probab7 = 100;
+            Debug.Log("60초 경과");
+        }
+        else
+        {
+            probab3 = 10;
+            probab4 = 20;
+            probab5 = 50;
+            probab6 = 80;
+            probab7 = 100;
+            Debug.Log("80초 경과");
+        }
+
+        if (probab <= probab3 && dot_count == 0)
+        {
+            size = 3;
+            order = new GameObject[size];
+            if (timer <= 20)
+                dotgenTime = 1.25f;
+            else if (timer <= 40)
+                dotgenTime = 1f;
+            else if (timer <= 60)
+                dotgenTime = 0.75f;
+            else if (timer <= 80)
+                dotgenTime = 0.5f;
+            else
+                dotgenTime = 0.45f;
+        }
+        else if (probab <= probab4 && dot_count == 0)
         {
             size = 4;
             order = new GameObject[size];
+            if (timer <= 20)
+                dotgenTime = 1.5f;
+            else if (timer <= 40)
+                dotgenTime = 1.25f;
+            else if (timer <= 60)
+                dotgenTime = 1f;
+            else if (timer <= 80)
+                dotgenTime = 0.75f;
+            else
+                dotgenTime = 0.6f;
+        }
+        else if (probab <= probab5 && dot_count == 0)
+        {
+            size = 5;
+            order = new GameObject[size];
+            if (timer <= 20)
+                dotgenTime = 1.75f;
+            else if (timer <= 40)
+                dotgenTime = 1.5f;
+            else if (timer <= 60)
+                dotgenTime = 1.25f;
+            else if (timer <= 80)
+                dotgenTime = 0.85f;
+            else
+                dotgenTime = 0.7f;
+        }
+        else if (probab <= probab6 && dot_count == 0)
+        {
+            size = 6;
+            order = new GameObject[size];
+            if (timer <= 40)
+                dotgenTime = 1.65f;
+            else if (timer <= 60)
+                dotgenTime = 1.35f;
+            else if (timer <= 80)
+                dotgenTime = 0.95f;
+            else
+                dotgenTime = 0.75f;
+        }
+        else if (probab <= probab7 && dot_count == 0)
+        {
+            size = 7;
+            order = new GameObject[size];
+            if (timer <= 80)
+                dotgenTime = 1f;
+            else
+                dotgenTime = 0.85f;
         }
     }
    

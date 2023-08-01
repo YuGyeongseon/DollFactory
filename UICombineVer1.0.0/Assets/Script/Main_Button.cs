@@ -13,7 +13,8 @@ public class Main_Button : MonoBehaviour
     public GameObject background;
     public GameObject inGameBackground;
 
-
+    public AudioSource audioSource;
+    public AudioClip buttonSound;
     public GameObject start_animation;
 
 
@@ -70,7 +71,12 @@ public class Main_Button : MonoBehaviour
 
     public void Custom_Button()
     {
+        if(Settings.is_Sound)
+        {
+            audioSource.PlayOneShot(buttonSound);
+        }
         SceneManager.LoadScene("shop__");
+        audioSource.PlayOneShot(buttonSound);
 
     }
 

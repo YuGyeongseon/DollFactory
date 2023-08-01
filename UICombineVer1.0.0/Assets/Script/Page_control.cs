@@ -15,6 +15,7 @@ public class Page_control : MonoBehaviour
         public static void page()
         {
             SceneManager.LoadScene(pagenum);
+            auto_Save.Save();
         }
 
         public void move1()

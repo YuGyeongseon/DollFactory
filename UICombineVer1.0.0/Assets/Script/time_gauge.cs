@@ -15,11 +15,11 @@ public class time_gauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GenerateDots.timer > GenerateDots.tpd * GenerateDots.order.Length + 1)
+        if (GenerateDots.cycle_timer > GenerateDots.dotgenTime + GenerateDots.vanish)
         {
-            time.value -= (Time.deltaTime / 3);
+            time.value -= (Time.deltaTime );
         }
-        else if (GenerateDots.timer == 0)
+        else if (GenerateDots.cycle_timer == 0)
         {
             time.value = 1;
         }
