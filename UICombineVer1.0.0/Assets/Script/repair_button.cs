@@ -47,7 +47,6 @@ public class repair_button : MonoBehaviour
         //    repair_station.station_level++;
         //    Settings.coin -= 1500;
         //}
-        repair_station_img.sprite = img[repair_station.station_level];
     }
     // Start is called before the first frame update
     
@@ -62,6 +61,7 @@ public class repair_button : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
+        repair_station_img.sprite = img[repair_station.station_level];
     }
 
 

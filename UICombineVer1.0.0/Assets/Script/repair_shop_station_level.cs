@@ -17,7 +17,8 @@ public class repair_shop_station_level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         img.sprite = stations[repair_station.station_level - 1];
+
     }
 }

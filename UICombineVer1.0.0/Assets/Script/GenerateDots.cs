@@ -44,6 +44,8 @@ public class GenerateDots : MonoBehaviour
     void Start()
     {
         pop_up.SetActive(false);
+        //float _width = GetComponent<SpriteRenderer>().bounds.size.x;
+        //float _height = spriteRenderer.bounds.size.y;
 
         timer = 0;
         dot_count = 0;
@@ -68,6 +70,11 @@ public class GenerateDots : MonoBehaviour
         Debug.Log(FeverMode.cycle);
         FeverMode.fever_on = false;
         FeverMode.after_fever = 0;
+        Debug.Log(max_x);
+        Debug.Log(max_y);
+        Debug.Log(min_x);
+        Debug.Log(min_y);
+
 
     }
     void Update()

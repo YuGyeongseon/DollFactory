@@ -40,7 +40,7 @@ public class shopDoll : MonoBehaviour
         textObjectProfitablity.text = Name;
         textObjectCircleNum.text = Settings.price[doll_num].ToString() + " Coin";
         textObjectMaxspeed.text = defect_rate;
-        selectDollNum = doll_num;
+        
 
 
 
@@ -67,9 +67,15 @@ public class shopDoll : MonoBehaviour
             if (Settings.is_Sound)
             {
                 gameObject.GetComponent<AudioSource>().Play();
+                selectDollNum = doll_num;
 
             }
             doll_img_cont.doll_no = doll_num; //인형 번호
+            if(doll_img_cont.is_doll[doll_num] == true)
+            {
+                selectDollNum= doll_num;
+            }
+
         }
 
     }
@@ -87,7 +93,7 @@ public class shopDoll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doll_img_cont.is_doll[doll_num])
+        if (Settings.dollOwned[doll_num])
         {
             if (doll_num == doll_img_cont.doll_no)
             {

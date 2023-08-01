@@ -86,7 +86,16 @@ public class swipe : MonoBehaviour
     void Start()
     {
 
-        
+        var obj = FindObjectsOfType<swipe>();
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Update is called once per frame

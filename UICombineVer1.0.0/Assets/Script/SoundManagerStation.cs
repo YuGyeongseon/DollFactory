@@ -5,9 +5,20 @@ using UnityEngine;
 public class SoundManagerStation : MonoBehaviour
 {
     // Start is called before the first frame update
+    public AudioSource audioSource;
+    public AudioClip buttonClick;
+    public AudioClip upgrade;
     void Start()
     {
-        
+        var obj = FindObjectsOfType<effect_shop>();
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -16,13 +27,13 @@ public class SoundManagerStation : MonoBehaviour
         if (repair_pop_up.soundUpgradeIndex == 1 && repair_pop_up.i == 0 || repair_pop_up.soundUpgradeIndex == 2 && repair_pop_up.i == 1)
         {
             repair_pop_up.i++;
-            repair_pop_up.audiosource_static.PlayOneShot(repair_pop_up.upgradeSound_static);
+            audioSource.PlayOneShot(upgrade);
             Debug.Log("업그레이드 사운드 재생");
         }
         if (repair_pop_up.isSell)
         {
             repair_pop_up.isSell = false;
-            repair_pop_up.audiosource_static.PlayOneShot(repair_pop_up.buttonClickSound_static);
+            audioSource.PlayOneShot(buttonClick);
             Debug.Log("클릭 사운드 재생");
         }
     }

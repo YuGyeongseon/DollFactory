@@ -1109,6 +1109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: touchPad
       objectReference: {fileID: 0}
+    - target: {fileID: 1238197975142815270, guid: 644dd0d9a7d2ba94a8bc9a0184c0a7d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1238197975142815272, guid: 644dd0d9a7d2ba94a8bc9a0184c0a7d0, type: 3}
       propertyPath: m_Sprite
       value: 

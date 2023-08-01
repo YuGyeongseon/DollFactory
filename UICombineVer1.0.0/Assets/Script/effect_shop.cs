@@ -13,7 +13,7 @@ public class effect_shop : MonoBehaviour
     public int target = 1;
     public static float effect_timer;
 
-    public int[] effects = new int[9] { 0,1,2,3,4,5,6,7,8};
+    public int[] effects;
 
     public static int[] effect_list = new int[4];
 
@@ -24,30 +24,21 @@ public class effect_shop : MonoBehaviour
     
     private void pick_list()
     {
-        for (int i = 0; i < 4; i++)
+        Debug.Log(effects.Length);
+        foreach(int i in effects)
         {
-
-            int ch = 1;
-            while (ch != 0)
-            {
-                ch = 0;
-                effect_list[i] = effects[UnityEngine.Random.Range(0,10)];
-                for (int j = 0; j < i; j++)
-                {
-                    if (effect_list[i] == effect_list[j] || Settings.is_effect[effect_list[i]])
-                    {
-                        ch += 1;
-                    }
-                }
-            }
-            Debug.Log(effect_list[i]);
-
-        }
+            Debug.Log(effects[i])
+;        }
+        Debug.Log(effects[8]);
+        Debug.Log(effects[9]);
+         effect_list[1] = effects[UnityEngine.Random.Range(0,10)];
+        Debug.Log(effect_list[1]+"¹Ù²ñ");
     }
     
     
     void Start()
     {
+        effects = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         effect_timer = 0;
         pick_list();
         var obj = FindObjectsOfType<effect_shop>();

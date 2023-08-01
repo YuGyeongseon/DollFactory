@@ -20,5 +20,6 @@ public class repair_popup_bg : MonoBehaviour
     void Update()
     {
         bg_img.sprite = img[repair_pop_up.type];
+
     }
 }

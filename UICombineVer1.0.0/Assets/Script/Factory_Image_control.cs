@@ -15,7 +15,7 @@ public class Factory_Image_control : MonoBehaviour
     {
         img = GetComponent<Image>();
         Color color = img.color;
-        if (doll_img_cont.is_doll[dollnum])
+        if (Settings.dollOwned[dollnum])
         {
             color.a = 1.0f;
             img.color = color;

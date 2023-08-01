@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class ani_con : MonoBehaviour
 {
-    int num = 0;
+    int num;
     public GameObject belt;
     public GameObject doll;
     int dot1 = 1;

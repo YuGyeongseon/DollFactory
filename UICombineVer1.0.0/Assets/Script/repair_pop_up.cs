@@ -58,6 +58,7 @@ public class repair_pop_up : MonoBehaviour
 
     public void sell_now_popup()
     {
+
         station_img.SetActive(false);
         price_1.SetActive(false);
         price_2.SetActive(true);
@@ -77,7 +78,7 @@ public class repair_pop_up : MonoBehaviour
 
                 repair_station.station_level++;
                 Settings.coin -= 1000;
-                popup.SetActive(false);
+                //popup.SetActive(false);
                 audiosource.PlayOneShot(upgradeSound);
                 soundUpgradeIndex++;
             }
@@ -87,7 +88,7 @@ public class repair_pop_up : MonoBehaviour
                 repair_station.station_level++;
 
                 Settings.coin -= 1500;
-                popup.SetActive(false);
+                //popup.SetActive(false);
                 audiosource.PlayOneShot(upgradeSound);
             }
             else
@@ -104,7 +105,7 @@ public class repair_pop_up : MonoBehaviour
 
             Settings.coin += Settings.incomplete_doll;
             Settings.incomplete_doll = 0;
-            popup.SetActive(false);
+            //popup.SetActive(false);
             audiosource.PlayOneShot(buttonClickSound);
         }
     }
@@ -128,15 +129,25 @@ public class repair_pop_up : MonoBehaviour
             price1.text = (Settings.incomplete_doll * 3).ToString();
             price2.text = Settings.incomplete_doll.ToString();
         }
-        //    if(soundUpgradeIndex== 1&&i==0||soundUpgradeIndex==2&&i==1) {
-        //        i++;
-        //        audiosource.PlayOneShot(upgradeSound);
-        //        Debug.Log("업그레이드 사운드 재생"); 
-        //    }
-        //    if(isSell)
-        //{
-        //    isSell= false;
-        //    audiosource.PlayOneShot(buttonClickSound);
-        //}
+        else if (type == 1)
+        {
+            switch (repair_station.station_level)
+            {
+
+                case 1:
+
+                    Title.text = "1000 coin";
+
+                    break;
+                case 2:
+
+                    Title.text = "1500 coin";
+
+                    break;
+                case 3:
+                    popup.SetActive(false);
+                    break;
+            }
+        }
     }
 }
