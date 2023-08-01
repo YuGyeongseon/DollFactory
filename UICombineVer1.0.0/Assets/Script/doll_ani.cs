@@ -9,7 +9,8 @@ public class doll_ani : MonoBehaviour
     public ParticleSystem parti;
     public Sprite[] sprites = new Sprite[3];
     SpriteRenderer spr;
-    
+    public AudioSource audiosource;
+    public AudioClip dollCompleteBgm;
 
 
 
@@ -25,6 +26,7 @@ public class doll_ani : MonoBehaviour
                 break;
             case 3:
                 spr.sprite = sprites[6];
+
                 break;
             case 4:
                 spr.sprite = sprites[9];
@@ -51,9 +53,11 @@ public class doll_ani : MonoBehaviour
     {
         spr.sprite = sprites[num];
         parti.SendMessage("particle");
+        audiosource.PlayOneShot(dollCompleteBgm);
+
     }
 
-   
+
 
 
     // Start is called before the first frame update

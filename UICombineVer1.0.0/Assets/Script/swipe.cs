@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class swipe : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip swipeSound;
     private void control(int a)
     {
         switch (Page_control.pagenum)
@@ -15,11 +17,14 @@ public class swipe : MonoBehaviour
             case 3:
                 if(a==1)
                 {
+                    audioSource.PlayOneShot(swipeSound);
                     Page_control.pagenum++;
                     Page_control.page();
                 }
                 else
                 {
+                    audioSource.PlayOneShot(swipeSound);
+
                     Page_control.pagenum += 2;
                     Page_control.page();
                 }
@@ -28,6 +33,8 @@ public class swipe : MonoBehaviour
             case 4:
                 if (a != 1)
                 {
+                    audioSource.PlayOneShot(swipeSound);
+
                     Page_control.pagenum--;
                     Page_control.page();
                 }
@@ -37,6 +44,8 @@ public class swipe : MonoBehaviour
             case 5:
                 if (a == 1)
                 {
+                    audioSource.PlayOneShot(swipeSound);
+
                     Page_control.pagenum-=2;
                     Page_control.page();
                 }

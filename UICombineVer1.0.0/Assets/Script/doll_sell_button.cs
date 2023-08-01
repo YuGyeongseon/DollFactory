@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class doll_sell_button : MonoBehaviour
 {
-
+    public AudioSource audioSource;
     public static bool sell2 = false;
-
+    public AudioClip audioClip;
     public void sell_button1()
     {
+        audioSource.PlayOneShot(audioClip);
         if (Settings.complete_doll >= 1)
         {
             Settings.complete_doll -= 1;

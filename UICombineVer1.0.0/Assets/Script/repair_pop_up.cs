@@ -18,7 +18,15 @@ public class repair_pop_up : MonoBehaviour
     public GameObject price_2;
     public GameObject price_3;
     public static int type;
-
+    public AudioClip upgradeSound;
+    public AudioClip buttonClickSound;
+    public AudioSource audiosource;
+    public static int soundUpgradeIndex = 0;
+    public static int i = 0;
+    public static bool isSell = false;
+    public static AudioClip upgradeSound_static;
+    public static AudioClip buttonClickSound_static;
+    public static AudioSource audiosource_static;
     public void upgrade_popup()
     {
         station_img.SetActive(true);
@@ -56,6 +64,7 @@ public class repair_pop_up : MonoBehaviour
         price_3.SetActive(true);
         type = 2;
         button_image.sprite = img[type];
+        isSell = true;
     }
 
     public void on_click()
@@ -64,18 +73,27 @@ public class repair_pop_up : MonoBehaviour
         {
             if (repair_station.station_level == 1 && Settings.coin >= 1000)
             {
+
+
                 repair_station.station_level++;
                 Settings.coin -= 1000;
                 popup.SetActive(false);
+                audiosource.PlayOneShot(upgradeSound);
+                soundUpgradeIndex++;
             }
             else if (repair_station.station_level == 2 && Settings.coin >= 1500)
             {
+
                 repair_station.station_level++;
+
                 Settings.coin -= 1500;
                 popup.SetActive(false);
+                audiosource.PlayOneShot(upgradeSound);
             }
             else
             {
+                audiosource.PlayOneShot(buttonClickSound);
+
                 Title.text = "코인이 부족합니다.";
                 
             }
@@ -83,9 +101,11 @@ public class repair_pop_up : MonoBehaviour
         }
         if(type == 2)
         {
+
             Settings.coin += Settings.incomplete_doll;
             Settings.incomplete_doll = 0;
             popup.SetActive(false);
+            audiosource.PlayOneShot(buttonClickSound);
         }
     }
     // Start is called before the first frame update
@@ -93,6 +113,9 @@ public class repair_pop_up : MonoBehaviour
     {
         popup.SetActive(false);
         button_image = GetComponent<Image>();
+        audiosource_static = audiosource;
+        upgradeSound_static = upgradeSound;
+        buttonClickSound_static= buttonClickSound;
     }
 
     // Update is called once per frame
@@ -100,9 +123,20 @@ public class repair_pop_up : MonoBehaviour
     {
         if(type == 2)
         {
+            
             //Title.text = "판매 금액: " + Settings.incomplete_doll+"\n판매하시겠습니까?";
             price1.text = (Settings.incomplete_doll * 3).ToString();
             price2.text = Settings.incomplete_doll.ToString();
         }
+        //    if(soundUpgradeIndex== 1&&i==0||soundUpgradeIndex==2&&i==1) {
+        //        i++;
+        //        audiosource.PlayOneShot(upgradeSound);
+        //        Debug.Log("업그레이드 사운드 재생"); 
+        //    }
+        //    if(isSell)
+        //{
+        //    isSell= false;
+        //    audiosource.PlayOneShot(buttonClickSound);
+        //}
     }
 }

@@ -39,6 +39,8 @@ public class GenerateDots : MonoBehaviour
     public static GameObject[] order;
     List<float> xList;
     List<float> yList;
+    public AudioSource audioSource;
+    public AudioClip gameOverBgm;
     void Start()
     {
         pop_up.SetActive(false);
@@ -134,13 +136,15 @@ public class GenerateDots : MonoBehaviour
             //        i.GetComponent<SpriteRenderer>().enabled = false;
             //} // 점 모습 사라짐
             dot_count++;
+
+            gameObject.GetComponent<AudioSource>().Play();
+
         }
 
         //if (feverTimer > 10 && Dot.touch_count >= 2)
         //{
         //    f = true;
         //}
-
     }
 
     void touchDot()
@@ -186,6 +190,8 @@ public class GenerateDots : MonoBehaviour
             {
                 Destroy(i);
             }
+            gameObject.GetComponent<AudioSource>().Play();
+
         }
 
         if (!def)
@@ -193,7 +199,7 @@ public class GenerateDots : MonoBehaviour
             gameOver();
         }
 
-
+        
     }
     void gameOver() // 게임오버 
     {
@@ -217,6 +223,7 @@ public class GenerateDots : MonoBehaviour
         comdoll.text = doll.ToString();
         incomdoll.text = indoll.ToString();
         score_indicator.text = Score.score.ToString();
+        audioSource.PlayOneShot(gameOverBgm);
         pop_up.SetActive(true);
     }
     void difficulty() // 점 개수 추가 

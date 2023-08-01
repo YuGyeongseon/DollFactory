@@ -69,7 +69,11 @@ public class Main_Button : MonoBehaviour
         }
     }
 
+    public void Custom_Button()
+    {
+        SceneManager.LoadScene("shop__");
 
+    }
 
 
     // Start is called before the first frame update
