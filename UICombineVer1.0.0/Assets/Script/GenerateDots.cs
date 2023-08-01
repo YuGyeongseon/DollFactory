@@ -47,6 +47,22 @@ public class GenerateDots : MonoBehaviour
         //float _width = GetComponent<SpriteRenderer>().bounds.size.x;
         //float _height = spriteRenderer.bounds.size.y;
 
+        //SpriteRenderer spriteRenderer = panel.gameObject.GetComponent<SpriteRenderer>();
+
+        //if (spriteRenderer == null)
+        //    return;
+
+        //gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        //float _width = spriteRenderer.bounds.size.x;
+        //float _height = spriteRenderer.bounds.size.y;
+
+        //float worldScreenHeight = (float)(Camera.main.orthographicSize * 2.0);
+        //float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
+
+
+        //gameObject.transform.localScale = new Vector3(worldScreenWidth / _width, worldScreenHeight / _height, 1);
+
         timer = 0;
         dot_count = 0;
         size = 3;

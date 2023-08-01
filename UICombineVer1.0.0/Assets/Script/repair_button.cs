@@ -22,7 +22,7 @@ public class repair_button : MonoBehaviour
     public void sell_now()
     {
         pop_up.SetActive(true);
-        O_button.SendMessage("sell_now_popup");
+        
 
         //Settings.coin += Settings.incomplete_doll;
         //Settings.incomplete_doll = 0;
@@ -37,7 +37,7 @@ public class repair_button : MonoBehaviour
     public void Upgrade()
     {
         pop_up.SetActive(true);
-        O_button.SendMessage("upgrade_popup");
+        //O_button.SendMessage("upgrade_popup");
         //if (repair_station.station_level == 1&&Settings.coin>=1000) {
         //    repair_station.station_level++;
         //    Settings.coin -= 1000;
@@ -52,6 +52,7 @@ public class repair_button : MonoBehaviour
     
     void Start()
     {
+        pop_up.SetActive(false);
     }
    
 

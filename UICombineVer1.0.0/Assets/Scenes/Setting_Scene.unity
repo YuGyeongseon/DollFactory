@@ -176,14 +176,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 0.97547174, b: 0.97547174, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da364880ddd8a6c4b835e76d3c934947, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61c880bbed8777644a998e65ee2bd76e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -347,9 +347,9 @@ RectTransform:
   m_Father: {fileID: 1253509061}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.6}
-  m_AnchorMax: {x: 0.5, y: 0.6}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.25, y: 0.6}
+  m_AnchorMax: {x: 0.25, y: 0.6}
+  m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167300774
@@ -668,9 +668,9 @@ RectTransform:
   m_Father: {fileID: 1253509061}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25, y: 0.6}
-  m_AnchorMax: {x: 0.25, y: 0.6}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.6}
+  m_AnchorMax: {x: 0.5, y: 0.6}
+  m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &397797493
@@ -927,8 +927,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -1196111484, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
-  - {fileID: -329529423, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
+  - {fileID: 21300000, guid: ecc7cbd1d7198e94ca08b61a6f875726, type: 3}
+  - {fileID: 21300000, guid: 37baf2f7c689bb84ab223cd2a49674ed, type: 3}
 --- !u!114 &530214166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,8 +1287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -1196111484, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
-  - {fileID: 403003842, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
+  - {fileID: 21300000, guid: 31585772e88ed0947918c70f5694486c, type: 3}
+  - {fileID: 21300000, guid: 473346a5d7172b74a84946b45c070fa5, type: 3}
 --- !u!114 &1303621541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.75, y: 0.6}
   m_AnchorMax: {x: 0.75, y: 0.6}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347549728
@@ -1937,8 +1937,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -1196111484, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
-  - {fileID: 2097872148, guid: 6c7d58b07964021429253dc415418d4a, type: 3}
+  - {fileID: 21300000, guid: 810a38b5a744cf843b9e3744e23fec3c, type: 3}
+  - {fileID: 21300000, guid: cf6bde3d08f6ed143a94c247f1920cae, type: 3}
 --- !u!114 &1842046664
 MonoBehaviour:
   m_ObjectHideFlags: 0

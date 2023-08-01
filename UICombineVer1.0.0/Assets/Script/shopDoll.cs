@@ -67,13 +67,17 @@ public class shopDoll : MonoBehaviour
             if (Settings.is_Sound)
             {
                 gameObject.GetComponent<AudioSource>().Play();
-                selectDollNum = doll_num;
+                //selectDollNum = doll_num;
 
             }
             doll_img_cont.doll_no = doll_num; //인형 번호
-            if(doll_img_cont.is_doll[doll_num] == true)
+            if (Settings.dollOwned[doll_num] == true)
             {
                 selectDollNum= doll_num;
+            }
+            else
+            {
+
             }
 
         }

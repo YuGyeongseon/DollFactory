@@ -129,25 +129,25 @@ public class repair_pop_up : MonoBehaviour
             price1.text = (Settings.incomplete_doll * 3).ToString();
             price2.text = Settings.incomplete_doll.ToString();
         }
-        else if (type == 1)
-        {
-            switch (repair_station.station_level)
-            {
+        //else if (type == 1)
+        //{
+        //    switch (repair_station.station_level)
+        //    {
 
-                case 1:
+        //        case 1:
 
-                    Title.text = "1000 coin";
+        //            Title.text = "1000 coin";
 
-                    break;
-                case 2:
+        //            break;
+        //        case 2:
 
-                    Title.text = "1500 coin";
+        //            Title.text = "1500 coin";
 
-                    break;
-                case 3:
-                    popup.SetActive(false);
-                    break;
-            }
-        }
+        //            break;
+        //        case 3:
+        //            popup.SetActive(false);
+        //            break;
+        //    }
+        //}
     }
 }

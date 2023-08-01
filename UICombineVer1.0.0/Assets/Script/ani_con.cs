@@ -22,7 +22,7 @@ public class ani_con : MonoBehaviour
     public void belt_in()   //벨트등장
     {
              doll.SendMessage("doll_enter");
-                belt.SendMessage("belt_in");
+             belt.SendMessage("belt_in");
     }
 
     public void belt_out()  //벨트 퇴장

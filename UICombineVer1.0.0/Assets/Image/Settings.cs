@@ -21,7 +21,7 @@ public class Settings : MonoBehaviour
     public static bool is_Sound;  //설정을 PlayerPrefs에서 부른 후 bool로 변환
     public static bool is_Vib;
     public static bool is_BGM;
-
+    public static int presentDoll;
     public static int[] price = new int[10];
     internal static int complete_doll;
     internal static int incomplete_doll;

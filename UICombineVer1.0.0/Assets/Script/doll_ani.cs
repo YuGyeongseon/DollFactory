@@ -67,7 +67,8 @@ public class doll_ani : MonoBehaviour
     {
        spr = GetComponent<SpriteRenderer>();
 
-       spr.sprite = sprites[0];
+       spr.sprite = sprites[Settings.presentDoll];
+       Debug.Log(Settings.presentDoll);
     }
 
     // Update is called once per frame

@@ -30,8 +30,7 @@ public class Main_Button : MonoBehaviour
         background.SetActive(false);
         start_animation.SendMessage("start");
 
-        Invoke("main_move", 0.5f);
-
+        Invoke("main_move", 0.58f);
     }
 
 
