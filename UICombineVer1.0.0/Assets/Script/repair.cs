@@ -29,7 +29,7 @@ public class repair : MonoBehaviour
             if(timer >= repair_station.speed[repair_station.station_level]) {
                 Settings.incomplete_doll--;
                 //repair_station.repair_doll++;
-                Settings.complete_doll++;
+                Settings.coin++;
                 timer -= repair_station.speed[repair_station.station_level];
             }
         }

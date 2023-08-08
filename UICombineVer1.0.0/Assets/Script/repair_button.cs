@@ -22,6 +22,9 @@ public class repair_button : MonoBehaviour
     //}
     public void sell_now()
     {
+        PopUpSOund.playSound();
+
+        
         pop_up.SetActive(true);
         
 
@@ -31,12 +34,17 @@ public class repair_button : MonoBehaviour
 
     public void advertise()
     {
+        ClickSound.playSound();
         Debug.Log("ad");
         Settings.coin += 3 * Settings.incomplete_doll;
         Settings.incomplete_doll = 0;
     }
     public void Upgrade()
     {
+        PopUpSOund.playSound();
+
+        
+        
         if (repair_station.station_level <= 2)
         {
             pop_up.SetActive(true);

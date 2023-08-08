@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+//using UnityEditor.AddressableAssets;
 using UnityEngine;
 
 public class doll_sell_button : MonoBehaviour
@@ -10,7 +11,7 @@ public class doll_sell_button : MonoBehaviour
     public AudioClip audioClip;
     public void sell_button1()
     {
-        audioSource.PlayOneShot(audioClip);
+        
         if (Settings.complete_doll >= 1)
         {
             Settings.complete_doll -= 1;
@@ -53,10 +54,26 @@ public class doll_sell_button : MonoBehaviour
         Settings.complete_doll+=100;
         Settings.incomplete_doll += 100;
         Settings.coin+=100;
+        Settings.bear_doll += 100;
 
 
     }
+    public void but2()
+    {
+        Settings.complete_doll = 0;
+        Settings.incomplete_doll = 0;
+        Settings.coin = 0;
 
+        for (int i = 2; i <= 9; i++)
+        {
+            Settings.dollOwned[i] = false;
+
+        }
+
+        auto_Save.Save();
+
+
+    }
     // Update is called once per frame
     void Update()
     {

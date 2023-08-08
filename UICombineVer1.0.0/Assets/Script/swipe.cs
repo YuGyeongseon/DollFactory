@@ -13,19 +13,37 @@ public class swipe : MonoBehaviour
     {
         switch (Page_control.pagenum)
         {
+            case 7:
+                break;
+
             case 0:
-            case 3:
-                if(a==1)
+                if (a == 1)
                 {
-                    audioSource.PlayOneShot(swipeSound);
+                    if (Settings.is_Sound)
+                    {
+                        audioSource.PlayOneShot(swipeSound);
+                    }
                     Page_control.pagenum++;
                     Page_control.page();
                 }
                 else
+                { 
+                    if (Settings.is_Sound)
                 {
                     audioSource.PlayOneShot(swipeSound);
+                }
 
                     Page_control.pagenum += 2;
+                    Page_control.page();
+                }
+                break;
+            case 3:
+                if (a == 1)
+                {
+                    if(Settings.is_Sound) { 
+                        audioSource.PlayOneShot(swipeSound);
+                    }
+                    Page_control.pagenum++;
                     Page_control.page();
                 }
                 break;
@@ -33,7 +51,8 @@ public class swipe : MonoBehaviour
             case 4:
                 if (a != 1)
                 {
-                    audioSource.PlayOneShot(swipeSound);
+                    if (Settings.is_Sound)
+                        audioSource.PlayOneShot(swipeSound);
 
                     Page_control.pagenum--;
                     Page_control.page();
@@ -41,15 +60,17 @@ public class swipe : MonoBehaviour
                 
                 break;
             case 2:
-            case 5:
                 if (a == 1)
                 {
-                    audioSource.PlayOneShot(swipeSound);
+                    if (Settings.is_Sound)
+                        audioSource.PlayOneShot(swipeSound);
 
                     Page_control.pagenum-=2;
                     Page_control.page();
                 }
 
+                break;
+            case 5:
                 break;
 
         } 

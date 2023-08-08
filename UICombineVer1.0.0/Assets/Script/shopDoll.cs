@@ -76,6 +76,7 @@ public class shopDoll : MonoBehaviour
             if (Settings.dollOwned[doll_num] == true)
             {
                 selectDollNum= doll_num;
+                PlayerPrefs.SetInt("selected", selectDollNum);
             }
             else
             {

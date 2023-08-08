@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+//using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +13,17 @@ public class gameover_button : MonoBehaviour
     {
         SceneManager.LoadScene(7);
         auto_Save.Save();
+        GenerateDots.timer = 0;
     }
 
     public void home() 
     {
         SceneManager.LoadScene(0);
         auto_Save.Save();
+        if (Settings.is_BGM)
+        {
+            BGM.Bgm.GetComponent<AudioSource>().Play();
+        }
 
     }
 

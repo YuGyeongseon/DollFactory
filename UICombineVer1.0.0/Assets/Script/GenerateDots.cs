@@ -15,6 +15,7 @@ public class GenerateDots : MonoBehaviour
     public Text score_indicator;
     private int doll;
     private int indoll;
+    private int score;
     public GameObject dot;
     public GameObject panel;
 
@@ -22,9 +23,9 @@ public class GenerateDots : MonoBehaviour
     public static float timer = 0; // 플레이 경과시간
     static public float vanish = 0.25f; // 점 사라지는 시간
     [SerializeField] public static float dotgenTime; // 점 생성 소요시간
-    public static float spw; // 웨이브 당 제공점수
+    public static int spw; // 웨이브 당 제공점수
     public bool f = false; // FeverMode의 int three_waves 와 연동
-    int defection;
+    int defection, bearRate;
     [SerializeField] int probab, probab3, probab4, probab5, probab6, probab7;
     float max_x;
     float max_y;
@@ -40,6 +41,7 @@ public class GenerateDots : MonoBehaviour
     public static GameObject[] order;
     List<float> xList;
     List<float> yList;
+    int delayNum;
     public AudioSource audioSource;
     public AudioClip gameOverBgm;
     void Start()
@@ -52,10 +54,10 @@ public class GenerateDots : MonoBehaviour
         float worldScreenHeight = (float)(Camera.main.orthographicSize * 2.0);
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
         gameObject.transform.localScale = new Vector3(worldScreenWidth / _width, worldScreenHeight / _height, 1);
-        probab = Random.Range(0, 101);
+        probab = Random.Range(1, 101);
         pop_up.SetActive(false);
         cycle_timer = 0;
-
+        audioSource.Play();
         dot_count = 0;
         order = new GameObject[size];
         xList = new List<float>();
@@ -69,19 +71,23 @@ public class GenerateDots : MonoBehaviour
         defectRate();
         doll = 0;
         indoll = 0;
-        spw = 1f;
+        spw = 1;
         Dot.touch_order = 0;
         Dot.touch_count = 0;
         FeverMode.fever_on = false;
         FeverMode.after_fever = 0;
-        
-
-
+        Invoke("delay", 1f);
+        BGM.Bgm.GetComponent<AudioSource>().Pause();
+        GetComponent<AudioSource>().Play();
+    }
+    void delay()
+    {
+        delayNum = 1;
     }
     void Update()
     {
 
-        if (GameOver == false)
+        if (GameOver == false&& delayNum == 1)
         {
             if (GetComponent<FeverMode>().dif_switch)
             {
@@ -98,8 +104,15 @@ public class GenerateDots : MonoBehaviour
             {
                 touchDot(); // 점생성후 동작함수
             }
-
-            if (cycle_timer > dotgenTime * 2 + vanish)
+            if (FeverMode.fever_on)
+            {
+                audioSource.pitch = 1.4f;
+            }
+            if (FeverMode.fever_on)
+            {
+                audioSource.pitch = 1.0f;
+            }
+            if (cycle_timer > (dotgenTime * 2) + vanish)
             {
                 gameOver();
             } // 제한시간 초과 게임오버
@@ -129,6 +142,7 @@ public class GenerateDots : MonoBehaviour
                 xList.Add(random_x);
                 yList.Add(random_y);
                 order[i] = Instantiate(dot);
+                dotCreateSound.playSound();
                 order[i].transform.position = new Vector2(random_x, random_y);
                 wave = false;
             }
@@ -149,7 +163,7 @@ public class GenerateDots : MonoBehaviour
             Debug.Log("사라짐");
             dot_count++;
 
-            gameObject.GetComponent<AudioSource>().Play();
+            //gameObject.GetComponent<AudioSource>().Play();
 
         }
 
@@ -172,18 +186,26 @@ public class GenerateDots : MonoBehaviour
             count++;
         }
         if (def)
-        {
+        { // 인게임 점수 계산 추가 해야됨
             int isScore = Random.Range(1, 101);
             if (isScore <= defection)
             {
                 notScore.notscore++;
-                Settings.incomplete_doll++;
+                Score.score++;
+                score++;
                 indoll++;
             }
             else
             {
+                dollNum.doll_amount++;
                 Score.score += spw;
+                score += spw;
                 doll++;
+                Settings.coin += spw;
+            }
+            if (isScore <= bearRate)
+            {
+                Settings.bear_doll++;
             }
             if (FeverMode.fever_on)
             {
@@ -202,8 +224,7 @@ public class GenerateDots : MonoBehaviour
             {
                 Destroy(i);
             }
-            gameObject.GetComponent<AudioSource>().Play();
-            probab = Random.Range(0, 101);
+            probab = Random.Range(1, 101);
 
         }
 
@@ -218,7 +239,7 @@ public class GenerateDots : MonoBehaviour
     {
         GameOver = true;
         Debug.Log("Game Over!");
-
+        audioSource.Stop();
 
         //SceneManager.LoadScene(7);
         size = 3;
@@ -231,13 +252,15 @@ public class GenerateDots : MonoBehaviour
         FeverMode.i = 0;
         xList.Clear();
         yList.Clear();
-    
+        Settings.incomplete_doll+=indoll;
+
         comdoll.text = doll.ToString();
         incomdoll.text = indoll.ToString();
-        score_indicator.text = Score.score.ToString();
+        score_indicator.text = score.ToString();
         audioSource.PlayOneShot(gameOverBgm);
         pop_up.SetActive(true);
         Vibration.Vibrate(500);
+        GetComponent<AudioSource>().Stop();
     }
     void difficulty() //  시간 경과 할 수록 각종 수치 변경 
     {
@@ -370,54 +393,63 @@ public class GenerateDots : MonoBehaviour
         if (shopDoll.selectDollNum == 1)
         {
             defection = 50;
+            bearRate = 1;
             FeverMode.a = 0;
             FeverMode.cycle= 0;
         }
         else if (shopDoll.selectDollNum == 2)
         {
             defection = 45;
-            FeverMode.a = 3;
+            bearRate = 3;
+            FeverMode.a = 5;
             FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 3)
         {
             defection = 30;
+            bearRate = 5;
             FeverMode.a = 5;
             FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 4)
         {
             defection = 25;
+            bearRate = 7;
             FeverMode.a = 10;
             FeverMode.cycle = 3;
         }
         else if (shopDoll.selectDollNum == 5)
         {
             defection = 20;
+            bearRate = 10;
             FeverMode.a = 15;
             FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 6)
         {
             defection = 15;
+            bearRate = 12;
             FeverMode.a = 20;
             FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 7)
         {
             defection = 10;
+            bearRate = 15;
             FeverMode.a = 25;
             FeverMode.cycle = 5;
         }
         else if (shopDoll.selectDollNum == 8)
         {
             defection = 5;
+            bearRate = 18;
             FeverMode.a = 30;
             FeverMode.cycle = 7;
         }
         else if (shopDoll.selectDollNum == 9)
         {
             defection = 3;
+            bearRate = 20;
             FeverMode.a = 35;
             FeverMode.cycle = 7;
         }

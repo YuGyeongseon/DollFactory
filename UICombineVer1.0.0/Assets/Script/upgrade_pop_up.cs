@@ -30,20 +30,21 @@ public class upgrade_pop_up : MonoBehaviour
             Settings.coin -= 1000;
             Title.text = "1500";
             //popup.SetActive(false);
-            audiosource.PlayOneShot(upgradeSound);
+            UpgradeSOund.playSound();
         }
         else if (repair_station.station_level == 2 && Settings.coin >= 1500)
         {
             
             repair_station.station_level++;
+            UpgradeSOund.playSound();
 
             Settings.coin -= 1500;
             popup.SetActive(false);
-            audiosource.PlayOneShot(upgradeSound);
+
         }
         else
         {
-            audiosource.PlayOneShot(buttonClickSound);
+            ClickSound.playSound();
         }
     }
     // Update is called once per frame

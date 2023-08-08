@@ -68,6 +68,9 @@ public class ani_con : MonoBehaviour
 
     public void doll_2()//인형 두번째 업그레이드
     {
+        
+        //dollCompleteSound.playSound();
+
         switch (shopDoll.selectDollNum)
         {
             case 1:
@@ -156,7 +159,9 @@ public class ani_con : MonoBehaviour
         }
         if (num == 0)
         {
+
             belt_in();
+
         }
         num++;
         if (Dot.touch_count == dot1)

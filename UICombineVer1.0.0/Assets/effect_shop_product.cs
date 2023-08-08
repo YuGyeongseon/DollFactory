@@ -12,7 +12,7 @@ public class effect_shop_product : MonoBehaviour
 
    
 
-    public Sprite[] images = new Sprite[9];
+    public Sprite[] images = new Sprite[12];
     // Start is called before the first frame update
     Image img;
 

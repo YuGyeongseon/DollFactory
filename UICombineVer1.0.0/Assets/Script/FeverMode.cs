@@ -60,6 +60,7 @@ public class FeverMode : MonoBehaviour
             GenerateDots.dotgenTime = 0.425f;
         else
             GenerateDots.dotgenTime = 0.38f;
+            GetComponent<AudioSource>().pitch = 1.4f;
         }
     
         if (three_waves >= cycle && fever_on) // 피버모드 해제
@@ -76,6 +77,7 @@ public class FeverMode : MonoBehaviour
             fever_on = false;
             after_fever = 0;
             GenerateDots.vanish = 0.25f;
+            GetComponent<AudioSource>().pitch = 1f;
         }
 
     }
@@ -84,7 +86,7 @@ public class FeverMode : MonoBehaviour
         if (Score.score + notScore.notscore > 3 && GenerateDots.dot_count == 0 && !fever_on && after_fever != 1)
         {
             Debug.Log("피버 연산 가동");
-            probab = Random.Range(0, 101);
+            probab = Random.Range(1, 101);
         }
 
         return probab;

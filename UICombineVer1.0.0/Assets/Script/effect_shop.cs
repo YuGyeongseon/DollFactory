@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class effect_shop : MonoBehaviour
@@ -28,19 +29,40 @@ public class effect_shop : MonoBehaviour
         foreach(int i in effects)
         {
             Debug.Log(effects[i])
-;        }
+;       }
         Debug.Log(effects[8]);
         Debug.Log(effects[9]);
-         effect_list[1] = effects[UnityEngine.Random.Range(0,10)];
+        effect_list[1] = effects[UnityEngine.Random.Range(0,12)];
         Debug.Log(effect_list[1]+"¹Ù²ñ");
+
+        PlayerPrefs.SetInt("effect", effect_list[1]);
+        PlayerPrefs.SetInt("effect_day", dt.Day);
     }
     
     
     void Start()
     {
-        effects = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        effects = new int[12] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11 };
         effect_timer = 0;
-        pick_list();
+        if (!test)
+        {
+            if (PlayerPrefs.GetInt("effect_day") != dt.Day)
+            {
+                Debug.Log("pick_list");
+                pick_list();
+            }
+            else
+            {
+                Debug.Log("pick_X");
+                effect_list[1] = PlayerPrefs.GetInt("effect");
+            }
+
+        }
+        else
+        {
+            pick_list();
+        }
+
         var obj = FindObjectsOfType<effect_shop>();
         if (obj.Length == 1)
         {

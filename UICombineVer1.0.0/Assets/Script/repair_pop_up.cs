@@ -27,6 +27,7 @@ public class repair_pop_up : MonoBehaviour
     public static AudioClip upgradeSound_static;
     public static AudioClip buttonClickSound_static;
     public static AudioSource audiosource_static;
+    private int sell_cnt;
     public void upgrade_popup()
     {
         station_img.SetActive(true);
@@ -66,6 +67,8 @@ public class repair_pop_up : MonoBehaviour
         type = 2;
         button_image.sprite = img[type];
         isSell = true;
+        sell_cnt = Settings.incomplete_doll / 3;
+        Debug.Log(sell_cnt);
     }
 
     public void on_click()
@@ -124,10 +127,10 @@ public class repair_pop_up : MonoBehaviour
     {
         if(type == 2)
         {
-            
+
             //Title.text = "판매 금액: " + Settings.incomplete_doll+"\n판매하시겠습니까?";
-            price1.text = (Settings.incomplete_doll * 3).ToString();
-            price2.text = Settings.incomplete_doll.ToString();
+            price1.text = sell_cnt.ToString();
+            price2.text = sell_cnt.ToString();
         }
         //else if (type == 1)
         //{

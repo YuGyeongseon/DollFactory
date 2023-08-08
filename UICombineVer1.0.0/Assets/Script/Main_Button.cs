@@ -17,19 +17,23 @@ public class Main_Button : MonoBehaviour
     public AudioClip buttonSound;
     public GameObject start_animation;
 
-
+    public GameObject indicaters;
     private void main_move()
     {
         SceneManager.LoadScene("Game_Scene");
     }
     public void Play_button()
     {
+        shopDoll.selectDollNum = PlayerPrefs.GetInt("selected");
         //Settings.vibrate();
         Handheld.Vibrate();
+        ClickSound.playSound();
 
         inGameBackground.SetActive(true);
+        indicaters.SetActive(false);
         background.SetActive(false);
         start_animation.SendMessage("start");
+        Page_control.pagenum = 7;
 
         Invoke("main_move", 0.58f);
     }
@@ -37,6 +41,8 @@ public class Main_Button : MonoBehaviour
 
     public void Setting_button()
     {
+        ClickSound.playSound();
+
         SceneManager.LoadScene("Setting_Scene");
         
     }
@@ -44,6 +50,8 @@ public class Main_Button : MonoBehaviour
 
     public void Shop_button()
     {
+        ClickSound.playSound();
+
         SceneManager.LoadScene("Shop_Scene");
         Page_control.pagenum = 3;
         
@@ -53,9 +61,11 @@ public class Main_Button : MonoBehaviour
     public void Achive_button()
     {
         Debug.Log("ACHIVE");
+        ClickSound.playSound();
+
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
-      
+        
         // 로그인 상태 확인
         if (Social.localUser.authenticated)
         {
@@ -71,12 +81,13 @@ public class Main_Button : MonoBehaviour
 
     public void Custom_Button()
     {
-        if(Settings.is_Sound)
-        {
-            audioSource.PlayOneShot(buttonSound);
-        }
+        ClickSound.playSound();
+        Page_control.pagenum = 5;
         SceneManager.LoadScene("shop__");
-        audioSource.PlayOneShot(buttonSound);
+        //if(Settings.is_Sound)
+        //{
+        //    audioSource.PlayOneShot(buttonSound);
+        //}
 
     }
 

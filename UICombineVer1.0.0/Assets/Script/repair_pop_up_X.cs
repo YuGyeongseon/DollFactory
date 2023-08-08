@@ -7,6 +7,7 @@ public class repair_pop_up_X : MonoBehaviour
     public GameObject popup;
     public void on_click()
     {
+        ClickSound.playSound();
         popup.SetActive(false);
 
     }

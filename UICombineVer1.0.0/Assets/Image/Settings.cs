@@ -14,7 +14,7 @@ public class Settings : MonoBehaviour
 
    
 
-    public static int coin;
+    internal static int coin;
 
     
 
@@ -25,17 +25,20 @@ public class Settings : MonoBehaviour
     public static int[] price = new int[10];
     internal static int complete_doll;
     internal static int incomplete_doll;
+    internal static int bear_doll;
 
+
+    public static bool[] effect_owned = new bool[12] { false, false, false, false, false, false, false, false, false, false, false, false };
     public static bool[] dollOwned = new bool[10] { true, true, false, false, false, false, false, false, false ,false};
     public static bool[] is_effect = new bool[10] { false, false, false, false, false, false, false, false,false,false };
+
+    public static int effect_selected;
     public void sound_button()
     {
         vibrate();
+        ClickSound.playSound();
 
-        if (!is_Sound)
-        {
-            GetComponent<AudioSource>().Play();
-        }
+        
         if (is_Sound) {
             is_Sound = false;
             Debug.Log("d");
@@ -53,14 +56,12 @@ public class Settings : MonoBehaviour
     public void BGM_button()
     {
         vibrate();
-        if (is_Sound)
-        {
-            GetComponent<AudioSource>().Play();
-        }
+        ClickSound.playSound();
         if (is_BGM)
         {
             is_BGM = false;
-            Debug.Log("b");
+            BGM.x = 1;
+            Debug.Log("False");
             
         }
         else
@@ -75,6 +76,8 @@ public class Settings : MonoBehaviour
 
     public void vib_button()
     {
+        ClickSound.playSound();
+
         vibrate();
         if (is_Sound)
         {

@@ -25,6 +25,7 @@ public class bgmcont : MonoBehaviour
       else
         {
             img.sprite = sprites[1];
+            Debug.Log("À½¾Ç ²¨Áü");
         }
     }
     

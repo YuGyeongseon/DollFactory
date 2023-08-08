@@ -50,13 +50,15 @@ public class Dot : MonoBehaviour
     public static int touch_order = 0; //해당 점이 터치되는 순서가 저장되는 static 변수
     public int num; // 해당점이 생성된 순서가 저장되는 변수
     //public int[] order = new int[3]; //점 터치순서 저장하기 위한 배열
+    public AudioSource audioSource;
+    public AudioClip clip;
     void Start() 
     {
     }
 
     void OnMouseDown()// 클릭시
     {
-        if (GenerateDots.dot_count >= GenerateDots.size + 1)
+        if (GenerateDots.dot_count >= GenerateDots.size)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (GetComponent<CircleCollider2D>().OverlapPoint(mousePosition))
@@ -66,6 +68,7 @@ public class Dot : MonoBehaviour
             touch_order++;
             touch_count++;
         }
+        dotCLickSOund.playSound();
         Handheld.Vibrate();
         Vibration.Vibrate(100);
     }

@@ -8,6 +8,7 @@ public class back_to_main : MonoBehaviour
 
     public void back()
     {
+        ClickSound.playSound();
 
         SceneManager.LoadScene("Main_Scene");
         GenerateDots.timer = 0;
