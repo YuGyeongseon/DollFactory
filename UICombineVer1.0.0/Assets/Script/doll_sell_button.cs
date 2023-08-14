@@ -63,13 +63,18 @@ public class doll_sell_button : MonoBehaviour
         Settings.complete_doll = 0;
         Settings.incomplete_doll = 0;
         Settings.coin = 0;
+        Settings.bear_doll = 0;
+        Settings.stationLevel= 0;
 
         for (int i = 2; i <= 9; i++)
         {
             Settings.dollOwned[i] = false;
 
         }
-
+        for (int i = 0; i <= 11; i++)
+        {
+            Settings.effect_owned[i] = false;
+        }
         auto_Save.Save();
 
 

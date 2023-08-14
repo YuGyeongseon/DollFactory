@@ -26,16 +26,17 @@ public class Settings : MonoBehaviour
     internal static int complete_doll;
     internal static int incomplete_doll;
     internal static int bear_doll;
-
+    public static bool isPopup;
 
     public static bool[] effect_owned = new bool[12] { false, false, false, false, false, false, false, false, false, false, false, false };
     public static bool[] dollOwned = new bool[10] { true, true, false, false, false, false, false, false, false ,false};
     public static bool[] is_effect = new bool[10] { false, false, false, false, false, false, false, false,false,false };
 
     public static int effect_selected;
+    public static int stationLevel;
     public void sound_button()
     {
-        vibrate();
+            vibrate();
         ClickSound.playSound();
 
         

@@ -9,7 +9,10 @@ public class back_to_main : MonoBehaviour
     public void back()
     {
         ClickSound.playSound();
-
+        if(Main_Button.isSetting)
+        {
+            Main_Button.isSetting = false;
+        }
         SceneManager.LoadScene("Main_Scene");
         GenerateDots.timer = 0;
     }

@@ -22,35 +22,40 @@ public class upgrade_pop_up : MonoBehaviour
     }
     public void on_click()
     {
-        if (repair_station.station_level == 1 && Settings.coin >= 1000)
+        if (Settings.stationLevel == 0 && Settings.coin >= 1000)
         {
 
 
-            repair_station.station_level++;
+            Settings.stationLevel++;
             Settings.coin -= 1000;
             Title.text = "1500";
             //popup.SetActive(false);
             UpgradeSOund.playSound();
+            auto_Save.Save();
+
         }
-        else if (repair_station.station_level == 2 && Settings.coin >= 1500)
+        else if (Settings.stationLevel == 1 && Settings.coin >= 1500)
         {
             
-            repair_station.station_level++;
+            Settings.stationLevel++;
             UpgradeSOund.playSound();
 
             Settings.coin -= 1500;
             popup.SetActive(false);
+            auto_Save.Save();
 
         }
         else
         {
             ClickSound.playSound();
+            auto_Save.Save();
+
         }
     }
     // Update is called once per frame
     void Update()
     {
-        switch (repair_station.station_level)
+        switch (Settings.stationLevel+1)
         {
 
             case 1:
@@ -66,5 +71,7 @@ public class upgrade_pop_up : MonoBehaviour
                 popup.SetActive(false);
                 break;
         }
+        auto_Save.Save();
+
     }
 }

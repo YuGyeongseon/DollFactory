@@ -16,6 +16,10 @@ public class pop_up_cancel : MonoBehaviour
         {
             buttonSound.gameObject.GetComponent<AudioSource>().Play();
         }
+        if(Settings.isPopup)
+        {
+            Settings.isPopup = false;   
+        }
         pop_up.SetActive(false);
     }
 

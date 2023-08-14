@@ -30,6 +30,8 @@ public class shopDoll : MonoBehaviour
 
 
     public string defect_rate;
+    public string fever_rate;
+
     public Sprite[] new_img = new Sprite[2];
 
     public static void Buy()
@@ -39,9 +41,9 @@ public class shopDoll : MonoBehaviour
 
     public void OnClick()
     {
-        textObjectProfitablity.text = Name;
-        textObjectCircleNum.text = Settings.price[doll_num].ToString() + " Coin";
-        textObjectMaxspeed.text = defect_rate;
+        textObjectProfitablity.text = "<" + Name+">";
+        textObjectCircleNum.text = "연구비용: "+Settings.price[doll_num].ToString() + " Coin";
+        textObjectMaxspeed.text = "불량률: "+defect_rate +"   피버율: "+fever_rate;
         
 
 
@@ -56,8 +58,16 @@ public class shopDoll : MonoBehaviour
 
             }
 
+            if (!Settings.dollOwned[doll_img_cont.doll_no])
+            {
+                Settings.isPopup= true;
+                pop_up.SetActive(true);
 
-            pop_up.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("IsOwned");
+            }
 
             coin.text = Settings.price[doll_num].ToString();
             doll_img.sprite = doll_imgs;

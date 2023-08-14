@@ -9,6 +9,9 @@ public class effect_shop_timer_idicator : MonoBehaviour
     private int hh;
     private int mm;
     private int ss;
+    private string hh_str;
+    private string mm_str;
+    private string ss_str;
 
     private DateTime tt;
     // Start is called before the first frame update
@@ -54,8 +57,31 @@ public class effect_shop_timer_idicator : MonoBehaviour
         hh = (tt - dt).Hours;
         mm=(tt-dt).Minutes; ss=(tt-dt).Seconds;
 
-       
-        GetComponent<Text>().text = hh + " : " + mm + " : " + ss;
+        if (hh < 10)
+        {
+            hh_str = "0" + hh;
+        }
+        else
+        {
+            hh_str = "" + hh;
+        }
+        if (mm < 10)
+        {
+            mm_str = "0" + mm;
+        }
+        else
+        {
+            mm_str = "" + mm;
+        }
+        if (ss < 10)
+        {
+            ss_str = "0" + ss;
+        }
+        else
+        {
+            ss_str = "" + ss;
+        }
+        GetComponent<Text>().text = hh_str + " : " + mm_str + " : " + ss_str;
     }
 }
 

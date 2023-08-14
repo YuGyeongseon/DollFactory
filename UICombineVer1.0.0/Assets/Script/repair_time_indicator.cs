@@ -8,6 +8,10 @@ public class repair_time_indicator : MonoBehaviour
     private float hh;
     private float mm;
     private float ss;
+    private string hh_str;
+    private string mm_str;
+    private string ss_str;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +39,30 @@ public class repair_time_indicator : MonoBehaviour
             ss++;
             Time--;
         }
-        
-        GetComponent<Text>().text = hh+" : "+mm+" : "+ss;
+        if(hh<10)
+        {
+            hh_str = "0" + hh;
+        }
+        else
+        {
+            hh_str = ""+hh;
+        }
+        if(mm < 10)
+        {
+            mm_str = "0" + mm;
+        }
+        else
+        {
+            mm_str = "" + mm;
+        }
+        if(ss<10)
+        {
+            ss_str = "0" + ss;
+        }
+        else
+        {
+            ss_str = "" + ss;
+        }
+        GetComponent<Text>().text = hh_str+" : "+mm_str+" : "+ss_str;
     }
 }

@@ -494,8 +494,8 @@ MonoBehaviour:
   repair_station_img: {fileID: 182542076}
   img:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 93610045ee29fac4983df601e7513385, type: 3}
-  - {fileID: 21300000, guid: 6265ee8bf63205844b15099485622a70, type: 3}
+  - {fileID: 21300000, guid: 917147a9c33022249b27a5a84622d089, type: 3}
+  - {fileID: 21300000, guid: ad5af415cd800dd48ba2401a799b2d8f, type: 3}
   text1: {fileID: 0}
   text2: {fileID: 0}
   isTestMode: 0
@@ -712,7 +712,7 @@ RectTransform:
   m_GameObject: {fileID: 182542074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 73485299}
@@ -720,8 +720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 540, y: 1170.286}
+  m_AnchoredPosition: {x: 0, y: 280}
+  m_SizeDelta: {x: 1100, y: 1320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182542076
 MonoBehaviour:
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6265ee8bf63205844b15099485622a70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 917147a9c33022249b27a5a84622d089, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -813,8 +813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7562122f83f0f0941b06bcab0821d492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price1: {fileID: 1222378669}
-  price2: {fileID: 1763464085}
+  price1: {fileID: 1763464085}
+  price2: {fileID: 1222378669}
 --- !u!114 &221759598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,8 +2178,8 @@ MonoBehaviour:
   upgradeSound: {fileID: 8300000, guid: 08c7378fb470b1b46a2f0a57ed7159c1, type: 3}
   img:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 93610045ee29fac4983df601e7513385, type: 3}
-  - {fileID: 21300000, guid: 6265ee8bf63205844b15099485622a70, type: 3}
+  - {fileID: 21300000, guid: 917147a9c33022249b27a5a84622d089, type: 3}
+  - {fileID: 21300000, guid: ad5af415cd800dd48ba2401a799b2d8f, type: 3}
   buttonClickSound: {fileID: 8300000, guid: 374b11d17152b284b86e1986ae337525, type: 3}
   audiosource: {fileID: 0}
   Title: {fileID: 1607150515}
@@ -3236,7 +3236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2323
+  m_Text: 0
 --- !u!222 &1222378670
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3929,8 +3929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 1080, y: 2340.57}
+  m_AnchoredPosition: {x: 0, y: 570}
+  m_SizeDelta: {x: 1100, y: 1320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328725671
 MonoBehaviour:
@@ -3952,7 +3952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7d1e712aaba80c42966d3dac14513ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b4cc5b3e14543c4197a600ea081079f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3983,9 +3983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stations:
-  - {fileID: 21300000, guid: c7d1e712aaba80c42966d3dac14513ac, type: 3}
-  - {fileID: 21300000, guid: 93610045ee29fac4983df601e7513385, type: 3}
-  - {fileID: 21300000, guid: 6265ee8bf63205844b15099485622a70, type: 3}
+  - {fileID: 21300000, guid: 7b4cc5b3e14543c4197a600ea081079f, type: 3}
+  - {fileID: 21300000, guid: 917147a9c33022249b27a5a84622d089, type: 3}
+  - {fileID: 21300000, guid: ad5af415cd800dd48ba2401a799b2d8f, type: 3}
 --- !u!1 &1330507908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5038,7 +5038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba2eeee9928e54c4faac6ae61d1ae833, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c9a368f0422183499c6764406ed7ace, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5630,7 +5630,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC644\uC131 \uC778\uD615"
+  m_Text: "\uACF0\uC778\uD615\n"
 --- !u!222 &1646744609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6040,7 +6040,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2341234
+  m_Text: 0
 --- !u!222 &1763464086
 CanvasRenderer:
   m_ObjectHideFlags: 0

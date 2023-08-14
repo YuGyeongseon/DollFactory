@@ -13,6 +13,8 @@ public class auto_Save : MonoBehaviour
         PlayerPrefs.SetInt("com_doll", Settings.complete_doll);
         PlayerPrefs.SetInt("incom_doll", Settings.incomplete_doll);
         PlayerPrefs.SetInt("bear_doll", Settings.bear_doll);
+        PlayerPrefs.SetInt("repairStation", Settings.stationLevel);
+
 
 
         /*
@@ -58,6 +60,8 @@ public class auto_Save : MonoBehaviour
     {
 
         Settings.coin = PlayerPrefs.GetInt("coin");
+        Settings.stationLevel = PlayerPrefs.GetInt("repairStation");
+
         Settings.complete_doll = PlayerPrefs.GetInt("com_doll");
         Settings.incomplete_doll = PlayerPrefs.GetInt("incom_doll");
         Settings.bear_doll = PlayerPrefs.GetInt("bear_doll");

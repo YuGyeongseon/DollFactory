@@ -12,10 +12,12 @@ public class GenerateDots : MonoBehaviour
     public GameObject pop_up;
     public Text comdoll;
     public Text incomdoll;
+    public Text beardoll;
     public Text score_indicator;
     private int doll;
     private int indoll;
     private int score;
+    private int bear;
     public GameObject dot;
     public GameObject panel;
 
@@ -57,7 +59,11 @@ public class GenerateDots : MonoBehaviour
         probab = Random.Range(1, 101);
         pop_up.SetActive(false);
         cycle_timer = 0;
-        audioSource.Play();
+        if(Settings.is_BGM)
+        {
+            audioSource.Play();
+
+        }
         dot_count = 0;
         order = new GameObject[size];
         xList = new List<float>();
@@ -78,7 +84,10 @@ public class GenerateDots : MonoBehaviour
         FeverMode.after_fever = 0;
         Invoke("delay", 1f);
         BGM.Bgm.GetComponent<AudioSource>().Pause();
-        GetComponent<AudioSource>().Play();
+        if(Settings.is_BGM)
+        {
+            //GetComponent<AudioSource>().Play();
+        }
     }
     void delay()
     {
@@ -104,14 +113,14 @@ public class GenerateDots : MonoBehaviour
             {
                 touchDot(); // 점생성후 동작함수
             }
-            if (FeverMode.fever_on)
-            {
-                audioSource.pitch = 1.4f;
-            }
-            if (FeverMode.fever_on)
-            {
-                audioSource.pitch = 1.0f;
-            }
+            //if (FeverMode.fever_on)
+            //{
+            //    audioSource.pitch = 1.4f;
+            //}
+            //if (FeverMode.fever_on)
+            //{
+            //    audioSource.pitch = 1.0f;
+            //}
             if (cycle_timer > (dotgenTime * 2) + vanish)
             {
                 gameOver();
@@ -177,6 +186,7 @@ public class GenerateDots : MonoBehaviour
     {
 
         int count = 0;
+
         foreach (GameObject i in order)
         {
             if (i.GetComponent<Dot>().num != count)
@@ -206,6 +216,8 @@ public class GenerateDots : MonoBehaviour
             if (isScore <= bearRate)
             {
                 Settings.bear_doll++;
+                bear++;
+                particle_controller.changeColorYellow();
             }
             if (FeverMode.fever_on)
             {
@@ -254,12 +266,21 @@ public class GenerateDots : MonoBehaviour
         yList.Clear();
         Settings.incomplete_doll+=indoll;
 
-        comdoll.text = doll.ToString();
-        incomdoll.text = indoll.ToString();
+        comdoll.text = doll.ToString() + "개";
+        incomdoll.text = indoll.ToString() + "개";
         score_indicator.text = score.ToString();
-        audioSource.PlayOneShot(gameOverBgm);
+        beardoll.text = bear.ToString()+"개";
+        if(Settings.is_BGM)
+        {
+            audioSource.PlayOneShot(gameOverBgm);
+        }
         pop_up.SetActive(true);
-        Vibration.Vibrate(500);
+        if(Settings.is_Vib)
+        {
+            Vibration.Vibrate(500);
+
+        }
+
         GetComponent<AudioSource>().Stop();
     }
     void difficulty() //  시간 경과 할 수록 각종 수치 변경 
@@ -393,7 +414,7 @@ public class GenerateDots : MonoBehaviour
         if (shopDoll.selectDollNum == 1)
         {
             defection = 50;
-            bearRate = 1;
+            bearRate = 1;//원래 1임
             FeverMode.a = 0;
             FeverMode.cycle= 0;
         }

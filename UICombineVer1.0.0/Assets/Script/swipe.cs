@@ -11,69 +11,74 @@ public class swipe : MonoBehaviour
     public AudioClip swipeSound;
     private void control(int a)
     {
-        switch (Page_control.pagenum)
+        if (!Main_Button.isSetting&&!Settings.isPopup)
         {
-            case 7:
-                break;
+            switch (Page_control.pagenum)
+            {
 
-            case 0:
-                if (a == 1)
-                {
-                    if (Settings.is_Sound)
+                case 7:
+                    break;
+
+                case 0:
+                    if (a == 1)
                     {
-                        audioSource.PlayOneShot(swipeSound);
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
+                        Page_control.pagenum++;
+                        Page_control.page();
                     }
-                    Page_control.pagenum++;
-                    Page_control.page();
-                }
-                else
-                { 
-                    if (Settings.is_Sound)
-                {
-                    audioSource.PlayOneShot(swipeSound);
-                }
+                    else
+                    {
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
 
-                    Page_control.pagenum += 2;
-                    Page_control.page();
-                }
-                break;
-            case 3:
-                if (a == 1)
-                {
-                    if(Settings.is_Sound) { 
-                        audioSource.PlayOneShot(swipeSound);
+                        Page_control.pagenum += 2;
+                        Page_control.page();
                     }
-                    Page_control.pagenum++;
-                    Page_control.page();
-                }
-                break;
-            case 1:
-            case 4:
-                if (a != 1)
-                {
-                    if (Settings.is_Sound)
-                        audioSource.PlayOneShot(swipeSound);
+                    break;
+                case 3:
+                    if (a == 1)
+                    {
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
+                        Page_control.pagenum++;
+                        Page_control.page();
+                    }
+                    break;
+                case 1:
+                case 4:
+                    if (a != 1)
+                    {
+                        if (Settings.is_Sound)
+                            audioSource.PlayOneShot(swipeSound);
 
-                    Page_control.pagenum--;
-                    Page_control.page();
-                }
-                
-                break;
-            case 2:
-                if (a == 1)
-                {
-                    if (Settings.is_Sound)
-                        audioSource.PlayOneShot(swipeSound);
+                        Page_control.pagenum--;
+                        Page_control.page();
+                    }
 
-                    Page_control.pagenum-=2;
-                    Page_control.page();
-                }
+                    break;
+                case 2:
+                    if (a == 1)
+                    {
+                        if (Settings.is_Sound)
+                            audioSource.PlayOneShot(swipeSound);
 
-                break;
-            case 5:
-                break;
+                        Page_control.pagenum -= 2;
+                        Page_control.page();
+                    }
 
-        } 
+                    break;
+                case 5:
+                    break;
+
+            }
+        }
     }
    
 

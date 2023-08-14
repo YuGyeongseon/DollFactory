@@ -12,10 +12,12 @@ public class pop_up_buy : MonoBehaviour
     public GameObject title;
     public Text coin;
     public GameObject buySound;
-    
+    public GameObject coinImg;
 
 
-    
+
+
+
 
     public void buy()
     {
@@ -34,7 +36,10 @@ public class pop_up_buy : MonoBehaviour
             {
                 buySound.GetComponent<AudioSource>().Play();
             }
+            shopDoll.selectDollNum = doll_img_cont.doll_no;
+            PlayerPrefs.SetInt("selected", shopDoll.selectDollNum);
             auto_Save.Save();
+            Settings.isPopup= false;
             pop_up.SetActive(false);
         }
         else

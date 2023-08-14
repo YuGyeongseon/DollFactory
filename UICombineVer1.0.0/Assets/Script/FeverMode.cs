@@ -39,7 +39,10 @@ public class FeverMode : MonoBehaviour
             GenerateDots.spw = 2; // 점수 2점
             Background.SetActive(false);
             FeverBackground.SetActive(true); // 피버모드 배경화면 전환
-            GetComponent<AudioSource>().Play(); // 브금 재생
+            if(Settings.is_BGM)
+            {
+                GetComponent<AudioSource>().Play(); // 브금 재생
+            }
             GenerateDots.size = 3; // 점 개수 3개 
             GenerateDots.order = new GameObject[GenerateDots.size];
             GenerateDots.vanish = 0.15f;

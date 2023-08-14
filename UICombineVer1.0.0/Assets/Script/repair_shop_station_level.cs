@@ -18,7 +18,7 @@ public class repair_shop_station_level : MonoBehaviour
     void Update()
     {
 
-        img.sprite = stations[repair_station.station_level - 1];
+        img.sprite = stations[Settings.stationLevel];
 
     }
 }

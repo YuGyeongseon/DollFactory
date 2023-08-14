@@ -9,6 +9,7 @@ using GooglePlayGames.BasicApi;
 
 public class Main_Button : MonoBehaviour
 {
+    public static bool isSetting;
     string log;
     public GameObject background;
     public GameObject inGameBackground;
@@ -26,7 +27,10 @@ public class Main_Button : MonoBehaviour
     {
         shopDoll.selectDollNum = PlayerPrefs.GetInt("selected");
         //Settings.vibrate();
-        Handheld.Vibrate();
+        if(Settings.is_Vib)
+        {
+            Handheld.Vibrate();
+        }
         ClickSound.playSound();
 
         inGameBackground.SetActive(true);
@@ -44,6 +48,7 @@ public class Main_Button : MonoBehaviour
         ClickSound.playSound();
 
         SceneManager.LoadScene("Setting_Scene");
+        isSetting = true;
         
     }
 

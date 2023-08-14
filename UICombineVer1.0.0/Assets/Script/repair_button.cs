@@ -24,7 +24,8 @@ public class repair_button : MonoBehaviour
     {
         PopUpSOund.playSound();
 
-        
+        Settings.isPopup = true;
+
         pop_up.SetActive(true);
         
 
@@ -45,12 +46,16 @@ public class repair_button : MonoBehaviour
 
         
         
-        if (repair_station.station_level <= 2)
+        //if (repair_station.station_level <= 2)
+        if (Settings.stationLevel <= 1)
         {
+                Settings.isPopup= true;
             pop_up.SetActive(true);
         }
         else
         {
+            Settings.isPopup = true;
+
             complete_pop_up.SetActive(true);
         }
         //O_button.SendMessage("upgrade_popup");
@@ -68,6 +73,7 @@ public class repair_button : MonoBehaviour
     
     void Start()
     {
+
         pop_up.SetActive(false);
         complete_pop_up.SetActive(false);
     }
@@ -79,9 +85,10 @@ public class repair_button : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if (repair_station.station_level <= 2)
+        //if (repair_station.station_level <= 2)
+        if(Settings.stationLevel <= 1)
         {
-            repair_station_img.sprite = img[repair_station.station_level];
+            repair_station_img.sprite = img[Settings.stationLevel+1];
         }
     }
 

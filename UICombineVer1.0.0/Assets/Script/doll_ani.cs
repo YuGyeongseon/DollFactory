@@ -16,8 +16,10 @@ public class doll_ani : MonoBehaviour
 
     private void doll_enter()
     {
+        dollSlideSound.playSound();
         if (Settings.dollOwned[shopDoll.selectDollNum])
         {
+
             switch (shopDoll.selectDollNum)
             {
                 case 1:
@@ -53,9 +55,9 @@ public class doll_ani : MonoBehaviour
 
     private void upgrade(int num)
     {
+        
         spr.sprite = sprites[num];
         parti.SendMessage("particle");
-        audiosource.PlayOneShot(dollCompleteBgm);
         Debug.Log("¤±");
     }
 

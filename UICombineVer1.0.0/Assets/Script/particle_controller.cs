@@ -5,16 +5,23 @@ using UnityEngine;
 public class particle_controller : MonoBehaviour
 {
 
-    ParticleSystem ps;
+    public static ParticleSystem ps;
 
     
-
+    public static void changeColorYellow()
+    {
+        ps.startColor = Color.yellow;
+    }
+    public static void changeColorWhite()
+    {
+        ps.startColor = Color.white;
+    }
     private void particle()
     {
 
         
 
-        ps.Play();
+        //ps.Play();
     }
 
 

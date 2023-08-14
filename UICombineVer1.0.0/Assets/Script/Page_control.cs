@@ -9,6 +9,8 @@ public class Page_control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Settings.isPopup = false;
+        Main_Button.isSetting = false;
     }
 
 

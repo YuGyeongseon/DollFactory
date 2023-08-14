@@ -11,6 +11,7 @@ public class gameover_button : MonoBehaviour
 
     public void retry()
     {
+        ClickSound.playSound();
         SceneManager.LoadScene(7);
         auto_Save.Save();
         GenerateDots.timer = 0;
@@ -18,6 +19,8 @@ public class gameover_button : MonoBehaviour
 
     public void home() 
     {
+        ClickSound.playSound();
+
         SceneManager.LoadScene(0);
         auto_Save.Save();
         if (Settings.is_BGM)
@@ -29,6 +32,7 @@ public class gameover_button : MonoBehaviour
 
     public void achive()
     {
+        ClickSound.playSound();
 
         //Debug.log("achive");
         //playgamesplatform.debuglogenabled = true;

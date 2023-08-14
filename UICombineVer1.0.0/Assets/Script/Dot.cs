@@ -58,7 +58,7 @@ public class Dot : MonoBehaviour
 
     void OnMouseDown()// 클릭시
     {
-        if (GenerateDots.dot_count >= GenerateDots.size)
+        if (GenerateDots.dot_count > GenerateDots.size)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (GetComponent<CircleCollider2D>().OverlapPoint(mousePosition))
@@ -67,10 +67,15 @@ public class Dot : MonoBehaviour
             num = touch_order;
             touch_order++;
             touch_count++;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
+        
         dotCLickSOund.playSound();
+        if(Settings.is_Vib)
+            {
         Handheld.Vibrate();
         Vibration.Vibrate(100);
+            }
     }
   }
 }

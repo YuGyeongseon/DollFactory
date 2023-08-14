@@ -17,7 +17,7 @@ public class ani_con : MonoBehaviour
     int dot2 = 2;
     int dot3 = 3;
     //int[] order;
-
+    int soundNum;
 
     public void belt_in()   //벨트등장
     {
@@ -34,6 +34,7 @@ public class ani_con : MonoBehaviour
     public void doll_1() //인형 첫번째 업그레이드
     {
         Debug.Log("dd");
+
         switch(shopDoll.selectDollNum)
         {
             case 1:
@@ -68,8 +69,7 @@ public class ani_con : MonoBehaviour
 
     public void doll_2()//인형 두번째 업그레이드
     {
-        
-        //dollCompleteSound.playSound();
+
 
         switch (shopDoll.selectDollNum)
         {
@@ -159,24 +159,31 @@ public class ani_con : MonoBehaviour
         }
         if (num == 0)
         {
-
             belt_in();
 
         }
         num++;
+        soundNum++;
         if (Dot.touch_count == dot1)
         {
+            
             doll_1();
         }
         if (Dot.touch_count ==  dot2)
         {
             doll_2();
-
+            if(soundNum==num)
+            {
+                dollCompleteSound.playSound();
+                particle_controller.ps.Play();
+            }
             num++;
         }
         if (Dot.touch_count == dot3)
         {
             out_and_in();
+            soundNum = num;
+            particle_controller.changeColorWhite();
 
         }
     }
