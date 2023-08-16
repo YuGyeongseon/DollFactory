@@ -11,17 +11,20 @@ public class Title_control : MonoBehaviour
     LocalizeStringEvent local;
 
 
-    private void String(int value)
+    private void UpdateTitle(int value)
     {
-        if (value == 1)
+        if (title != null && local != null)
         {
-            title.color = Color.black;
-            local.StringReference.SetReference("FirstTable", "Buy_Title");
-        }
-        else
-        {
-            title.color = Color.red;
-            local.StringReference.SetReference("FirstTable", "Fail_to_Buy");
+            if (value == 1)
+            {
+                title.color = Color.black;
+                local.StringReference.SetReference("FirstTable", "Buy_Title");
+            }
+            else
+            {
+                title.color = Color.red;
+                local.StringReference.SetReference("FirstTable", "Fail_to_Buy");
+            }
         }
 
     }

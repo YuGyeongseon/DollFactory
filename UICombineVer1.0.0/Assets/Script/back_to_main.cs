@@ -8,8 +8,13 @@ public class back_to_main : MonoBehaviour
 
     public void back()
     {
-
-        SceneManager.LoadScene(0);
+        ClickSound.playSound();
+        if(Main_Button.isSetting)
+        {
+            Main_Button.isSetting = false;
+        }
+        SceneManager.LoadScene("Main_Scene");
+        GenerateDots.timer = 0;
     }
 
     // Start is called before the first frame update

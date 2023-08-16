@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Page_control : MonoBehaviour
-
 {
     public static int pagenum;
     // Start is called before the first frame update
     void Start()
     {
+        Settings.isPopup = false;
+        Main_Button.isSetting = false;
     }
 
 
         public static void page()
         {
             SceneManager.LoadScene(pagenum);
+            auto_Save.Save();
         }
 
         public void move1()
@@ -54,7 +56,7 @@ public class Page_control : MonoBehaviour
         pagenum = 5;
     }
 
-    // Update is called once per frames
+    // Update is called once per frame
     void Update()
         {
 

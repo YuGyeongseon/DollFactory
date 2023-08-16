@@ -14,25 +14,33 @@ public class Settings : MonoBehaviour
 
    
 
-    public static int coin;
+    internal static int coin;
 
-    public static int complete_doll;
-    public static int incomplete_doll;
+    
 
     public static bool is_Sound;  //설정을 PlayerPrefs에서 부른 후 bool로 변환
     public static bool is_Vib;
     public static bool is_BGM;
-
+    public static int presentDoll;
     public static int[] price = new int[10];
+    internal static int complete_doll;
+    internal static int incomplete_doll;
+    internal static int bear_doll;
+    public static bool isPopup;
 
+    public static bool[] effect_owned = new bool[12] { false, false, false, false, false, false, false, false, false, false, false, false };
+    public static bool[] dollOwned = new bool[10] { true, true, false, false, false, false, false, false, false ,false};
+    public static bool[] is_effect = new bool[10] { false, false, false, false, false, false, false, false,false,false };
+
+    public static int effect_selected;
+    public static int stationLevel;
+    
     public void sound_button()
     {
-        vibrate();
+            vibrate();
+        ClickSound.playSound();
 
-        if (!is_Sound)
-        {
-            GetComponent<AudioSource>().Play();
-        }
+        
         if (is_Sound) {
             is_Sound = false;
             Debug.Log("d");
@@ -50,14 +58,12 @@ public class Settings : MonoBehaviour
     public void BGM_button()
     {
         vibrate();
-        if (is_Sound)
-        {
-            GetComponent<AudioSource>().Play();
-        }
+        ClickSound.playSound();
         if (is_BGM)
         {
             is_BGM = false;
-            Debug.Log("b");
+            BGM.x = 1;
+            Debug.Log("False");
             
         }
         else
@@ -72,6 +78,8 @@ public class Settings : MonoBehaviour
 
     public void vib_button()
     {
+        ClickSound.playSound();
+
         vibrate();
         if (is_Sound)
         {
@@ -107,16 +115,16 @@ public class Settings : MonoBehaviour
     void Start()
     {
 
-        
 
-        price[2] = 11;
-        price[3] = 12;
-        price[4] = 13;
-        price[5] = 14;
-        price[6] = 15;
-        price[7] = 16;
-        price[8] = 17;
-        price[9] = 18;
+        price[1] = 1;
+        price[2] = 2;
+        price[3] = 3;
+        price[4] = 4;
+        price[5] = 5;
+        price[6] = 6;
+        price[7] = 7;
+        price[8] = 8;
+        price[9] = 9;
 
         
 

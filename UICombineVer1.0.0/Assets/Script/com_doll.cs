@@ -14,6 +14,6 @@ public class com_doll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = Settings.complete_doll.ToString();
+        GetComponent<Text>().text = Settings.bear_doll.ToString();
     }
 }

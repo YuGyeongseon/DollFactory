@@ -10,30 +10,31 @@ using UnityEngine;
 
 public class ani_con : MonoBehaviour
 {
-    int num = 0;
+    int num;
     public GameObject belt;
     public GameObject doll;
+    int dot1 = 1;
+    int dot2 = 2;
+    int dot3 = 3;
     //int[] order;
-
+    int soundNum;
 
     public void belt_in()   //벨트등장
     {
              doll.SendMessage("doll_enter");
-                belt.SendMessage("belt_in");
+             belt.SendMessage("belt_in");
     }
 
     public void belt_out()  //벨트 퇴장
     {
         belt.SendMessage("belt_out");
-        
-        
-        
 
     }
 
     public void doll_1() //인형 첫번째 업그레이드
     {
         Debug.Log("dd");
+
         switch(shopDoll.selectDollNum)
         {
             case 1:
@@ -68,6 +69,8 @@ public class ani_con : MonoBehaviour
 
     public void doll_2()//인형 두번째 업그레이드
     {
+
+
         switch (shopDoll.selectDollNum)
         {
             case 1:
@@ -110,32 +113,77 @@ public class ani_con : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        int dotNum = GenerateDots.size;
+        if (dotNum == 3)
+        {
+            dot1 = 1;
+            dot2 = 2;
+            dot3 = 3;
+        }
+        else if (dotNum == 4)
+        {
+            dot1 = 1;
+            dot2 = 3;
+            dot3 = 4;
+        }
+        else if (dotNum == 5)
+        {
+            dot1 = 2;
+            dot2 = 4;
+            dot3 = 5;
+        }
+        else if(dotNum == 6)
+        {
+            dot1 = 2;
+            dot2 = 4;
+            dot3 = 6;
+        }
+        else if (dotNum == 7)
+        {
+            dot1 = 3;
+            dot2 = 5;
+            dot3 = 7;
+        }
+        else if (dotNum == 8)
+        {
+            dot1 = 3;
+            dot2 = 6;
+            dot3 = 8;
+        }
         if (num == 0)
         {
             belt_in();
+
         }
         num++;
-        Debug.Log(num);
-        if (GenerateDots.order[0] == 1)
+        soundNum++;
+        if (Dot.touch_count == dot1)
         {
+            
             doll_1();
         }
-        if (GenerateDots.order[1] == 2&& GenerateDots.order[0] == 1)
+        if (Dot.touch_count ==  dot2)
         {
             doll_2();
-
+            if(soundNum==num)
+            {
+                dollCompleteSound.playSound();
+                particle_controller.ps.Play();
+            }
             num++;
         }
-        if (GenerateDots.order[2] == 3&& GenerateDots.order[1] == 2 && GenerateDots.order[0] == 1)
+        if (Dot.touch_count == dot3)
         {
             out_and_in();
+            soundNum = num;
+            particle_controller.changeColorWhite();
 
         }
     }

@@ -8,12 +8,12 @@ public class coin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         GetComponent<Text>().text = Settings.coin.ToString();
+        
     }
 }

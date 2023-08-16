@@ -11,38 +11,42 @@ public class pop_up_buy : MonoBehaviour
 
     public GameObject title;
     public Text coin;
+    public GameObject buySound;
+    public GameObject coinImg;
 
-    
 
 
-    
+
+
 
     public void buy()
     {
 
-       
 
+        buySound = GameObject.Find("BuySound");
         if (Settings.coin >= Settings.price[doll_img_cont.doll_no])
         {
             
 
             doll_img_cont.is_doll[doll_img_cont.doll_no] = true;
             Settings.coin = Settings.coin -Settings.price[doll_img_cont.doll_no];
-            coin.text = Settings.coin.ToString();
             shopDoll.Buy();
+            Settings.dollOwned[doll_img_cont.doll_no] = true;
+            if (Settings.is_Sound)
+            {
+                buySound.GetComponent<AudioSource>().Play();
+            }
+            shopDoll.selectDollNum = doll_img_cont.doll_no;
+            PlayerPrefs.SetInt("selected", shopDoll.selectDollNum);
+            auto_Save.Save();
+            Settings.isPopup= false;
             pop_up.SetActive(false);
         }
         else
         {
 
-            title.SendMessage("String", 2);
 
-            if (Settings.is_Sound)
-            {
-                gameObject.GetComponent<AudioSource>().Play();
 
-            }
-            
         }
 
 

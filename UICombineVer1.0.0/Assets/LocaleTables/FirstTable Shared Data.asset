@@ -15,24 +15,154 @@ MonoBehaviour:
   m_TableCollectionName: FirstTable
   m_TableCollectionNameGuidString: 21b8d0d7fd81a2f428be17daa6a72b50
   m_Entries:
-  - m_Id: 69726547968
-    m_Key: profitablity
+  - m_Id: 31810307374886912
+    m_Key: research
     m_Metadata:
       m_Items: []
-  - m_Id: 2489470857216
-    m_Key: circleNum
+  - m_Id: 31820815192731648
+    m_Key: research_text
     m_Metadata:
       m_Items: []
-  - m_Id: 8188561108992
-    m_Key: maxSpeed
+  - m_Id: 31822677589536768
+    m_Key: buy
     m_Metadata:
       m_Items: []
-  - m_Id: 16866550919168
-    m_Key: Buy_Title
+  - m_Id: 31823506941849600
+    m_Key: Save
     m_Metadata:
       m_Items: []
-  - m_Id: 21155721687040
-    m_Key: Fail_to_Buy
+  - m_Id: 31825356571193344
+    m_Key: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31826658722230272
+    m_Key: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31827217852313600
+    m_Key: Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31827929369849856
+    m_Key: Skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31828596520038400
+    m_Key: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31830390369333248
+    m_Key: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31832333867200512
+    m_Key: sound_effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31832807198601216
+    m_Key: Vib
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31835631663886336
+    m_Key: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31836875946110976
+    m_Key: Upgrade_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31838807527960576
+    m_Key: 'Sell_now_1
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31839191071895552
+    m_Key: sell_now_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31840856999112704
+    m_Key: sell_now_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31842104880050176
+    m_Key: Upgrade_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31842706511015936
+    m_Key: Advertisement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31843085432827904
+    m_Key: sell_incom_doll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859614274727936
+    m_Key: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859704573898752
+    m_Key: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859736509329408
+    m_Key: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859772559372288
+    m_Key: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859790099951616
+    m_Key: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859811922915328
+    m_Key: 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859831770361856
+    m_Key: 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859851890438144
+    m_Key: 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859870542508032
+    m_Key: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861051348135936
+    m_Key: cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861324728676352
+    m_Key: defect_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861530127937536
+    m_Key: fever_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866718310019072
+    m_Key: com_doll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866782407372800
+    m_Key: Incom_doll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866875378315264
+    m_Key: bear_doll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31868094884786176
+    m_Key: sell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31871092763570176
+    m_Key: effect_buy
     m_Metadata:
       m_Items: []
   m_Metadata:

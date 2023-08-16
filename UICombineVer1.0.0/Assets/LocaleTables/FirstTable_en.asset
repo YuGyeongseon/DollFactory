@@ -18,24 +18,152 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 69726547968
-    m_Localized: profitablity
+  - m_Id: 31810307374886912
+    m_Localized: Research
     m_Metadata:
       m_Items: []
-  - m_Id: 2489470857216
-    m_Localized: Max Circles
+  - m_Id: 31820815192731648
+    m_Localized: Do you want to research
     m_Metadata:
       m_Items: []
-  - m_Id: 8188561108992
-    m_Localized: Max Speed
+  - m_Id: 31822677589536768
+    m_Localized: Buy
     m_Metadata:
       m_Items: []
-  - m_Id: 16866550919168
-    m_Localized: Would you like to buy it?
+  - m_Id: 31823506941849600
+    m_Localized: Save
     m_Metadata:
       m_Items: []
-  - m_Id: 21155721687040
-    m_Localized: You don't have enough coins
+  - m_Id: 31825356571193344
+    m_Localized: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31826658722230272
+    m_Localized: Lab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31827217852313600
+    m_Localized: Ranking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31827929369849856
+    m_Localized: Skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31828596520038400
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31830390369333248
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31832333867200512
+    m_Localized: sound effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31832807198601216
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31835631663886336
+    m_Localized: Do you want to upgrade?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31836875946110976
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31838807527960576
+    m_Localized: Receipt amount upon completion of repair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31839191071895552
+    m_Localized: Amount received for immediate sale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31840856999112704
+    m_Localized: Would you like to sell it right away?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31842104880050176
+    m_Localized: Upgrade station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31842706511015936
+    m_Localized: Advertisement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31843085432827904
+    m_Localized: Sell broken dolls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859614274727936
+    m_Localized: Furycoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859704573898752
+    m_Localized: RiceRat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859736509329408
+    m_Localized: Turtloon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859772559372288
+    m_Localized: Babish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859790099951616
+    m_Localized: FrogMeow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859811922915328
+    m_Localized: Owllet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859831770361856
+    m_Localized: Chesthog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859851890438144
+    m_Localized: Clothbunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859870542508032
+    m_Localized: FlowLion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861051348135936
+    m_Localized: Cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861324728676352
+    m_Localized: defect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31861530127937536
+    m_Localized: fever
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866718310019072
+    m_Localized: Fine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866782407372800
+    m_Localized: Broken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31866875378315264
+    m_Localized: Bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31868094884786176
+    m_Localized: Sell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31871092763570176
+    m_Localized: Do you want to buy effect?
     m_Metadata:
       m_Items: []
   references:

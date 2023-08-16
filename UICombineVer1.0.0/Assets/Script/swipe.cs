@@ -1,49 +1,84 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class swipe : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip swipeSound;
     private void control(int a)
     {
-        switch (Page_control.pagenum)
+        if (!Main_Button.isSetting&&!Settings.isPopup)
         {
-            case 0:
-            case 3:
-                if(a==1)
-                {
-                    Page_control.pagenum++;
-                    Page_control.page();
-                }
-                else
-                {
-                    Page_control.pagenum += 2;
-                    Page_control.page();
-                }
-                break;
-            case 1:
-            case 4:
-                if (a != 1)
-                {
-                    Page_control.pagenum--;
-                    Page_control.page();
-                }
-                
-                break;
-            case 2:
-            case 5:
-                if (a == 1)
-                {
-                    Page_control.pagenum-=2;
-                    Page_control.page();
-                }
+            switch (Page_control.pagenum)
+            {
 
-                break;
+                case 7:
+                    break;
 
-        } 
+                case 0:
+                    if (a == 1)
+                    {
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
+                        Page_control.pagenum++;
+                        Page_control.page();
+                    }
+                    else
+                    {
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
+
+                        Page_control.pagenum += 2;
+                        Page_control.page();
+                    }
+                    break;
+                case 3:
+                    if (a == 1)
+                    {
+                        if (Settings.is_Sound)
+                        {
+                            audioSource.PlayOneShot(swipeSound);
+                        }
+                        Page_control.pagenum++;
+                        Page_control.page();
+                    }
+                    break;
+                case 1:
+                case 4:
+                    if (a != 1)
+                    {
+                        if (Settings.is_Sound)
+                            audioSource.PlayOneShot(swipeSound);
+
+                        Page_control.pagenum--;
+                        Page_control.page();
+                    }
+
+                    break;
+                case 2:
+                    if (a == 1)
+                    {
+                        if (Settings.is_Sound)
+                            audioSource.PlayOneShot(swipeSound);
+
+                        Page_control.pagenum -= 2;
+                        Page_control.page();
+                    }
+
+                    break;
+                case 5:
+                    break;
+
+            }
+        }
     }
    
 
@@ -77,7 +112,16 @@ public class swipe : MonoBehaviour
     void Start()
     {
 
-        
+        var obj = FindObjectsOfType<swipe>();
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Update is called once per frame
